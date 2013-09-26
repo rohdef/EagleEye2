@@ -5,8 +5,10 @@ import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 
 public class AccelerometerTrigger extends Trigger implements SensorEventListener {
-  public AccelerometerTrigger() {
+  private float minThresholdMovement;
 
+  public AccelerometerTrigger(float minThresholdMovement) {
+    this.minThresholdMovement = minThresholdMovement;
   }
 
   /**
@@ -22,11 +24,17 @@ public class AccelerometerTrigger extends Trigger implements SensorEventListener
 
   @Override
   public void onSensorChanged(Sensor sensor, int accuracy, long timestamp, float[] values) {
-    fireTriggers(null);
+    float x = values[0];
+    float y = values[1];
+    float z = values[2];
+
+    if(minThresholdMovement <= x || minThresholdMovement <= y || minThresholdMovement <= z){
+      fireTriggers(null);
+    }
   }
 
   @Override
   public void onAccuracyChanged(Sensor sensor, int i) {
-
+    // Ignore
   }
 }

@@ -4,13 +4,17 @@
     <list default="true" id="9da5c466-2e91-427c-9c67-91d0ae598e61" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dk/au/cs/EagleEye2/triggers/AccelerometerTrigger.java" afterPath="$PROJECT_DIR$/src/dk/au/cs/EagleEye2/triggers/AccelerometerTrigger.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/src/dk/au/cs/EagleEye2/triggers/AccelerometerTriggerTest.java" afterPath="$PROJECT_DIR$/tests/src/dk/au/cs/EagleEye2/triggers/AccelerometerTriggerTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dk/au/cs/EagleEye2/triggers/Trigger.java" afterPath="$PROJECT_DIR$/src/dk/au/cs/EagleEye2/triggers/Trigger.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/codeStyleSettings.xml" afterPath="$PROJECT_DIR$/.idea/codeStyleSettings.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project.properties" afterPath="$PROJECT_DIR$/project.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/project.properties" afterPath="$PROJECT_DIR$/tests/project.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/tests.iml" afterPath="$PROJECT_DIR$/tests/tests.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="EagleEye-2.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="9da5c466-2e91-427c-9c67-91d0ae598e61" time="1380189186035" ignored="false" />
-    <file path="/fragment.java" changelist="9da5c466-2e91-427c-9c67-91d0ae598e61" time="1380189331236" ignored="false" />
+    <file path="/Dummy.txt" changelist="9da5c466-2e91-427c-9c67-91d0ae598e61" time="1380206328760" ignored="false" />
+    <file path="/fragment.java" changelist="9da5c466-2e91-427c-9c67-91d0ae598e61" time="1380208489973" ignored="false" />
     <file path="/IRegistrer.java" changelist="9da5c466-2e91-427c-9c67-91d0ae598e61" time="1380122667772" ignored="false" />
     <file path="/ITrigger.java" changelist="9da5c466-2e91-427c-9c67-91d0ae598e61" time="1380200973384" ignored="false" />
     <file path="/MockTrigger.java" changelist="9da5c466-2e91-427c-9c67-91d0ae598e61" time="1380122899323" ignored="false" />
@@ -18,13 +22,13 @@
     <file path="/TestAccelerometerTrigger.java" changelist="9da5c466-2e91-427c-9c67-91d0ae598e61" time="1380123588743" ignored="false" />
     <file path="/FileRegistrarTest.java" changelist="9da5c466-2e91-427c-9c67-91d0ae598e61" time="1380193526796" ignored="false" />
     <file path="/ServerRegistrarTest.java" changelist="9da5c466-2e91-427c-9c67-91d0ae598e61" time="1380193699481" ignored="false" />
-    <file path="/AccelerometerTriggerTest.java" changelist="9da5c466-2e91-427c-9c67-91d0ae598e61" time="1380201011533" ignored="false" />
+    <file path="/AccelerometerTriggerTest.java" changelist="9da5c466-2e91-427c-9c67-91d0ae598e61" time="1380208778559" ignored="false" />
     <file path="/DistanceTriggerTest.java" changelist="9da5c466-2e91-427c-9c67-91d0ae598e61" time="1380196732655" ignored="false" />
-    <file path="/a.java" changelist="9da5c466-2e91-427c-9c67-91d0ae598e61" time="1380189695955" ignored="false" />
+    <file path="/a.java" changelist="9da5c466-2e91-427c-9c67-91d0ae598e61" time="1380207325534" ignored="false" />
     <file path="/DistanceWithSpeedTest.java" changelist="9da5c466-2e91-427c-9c67-91d0ae598e61" time="1380195931820" ignored="false" />
     <file path="/TimeTriggerTest.java" changelist="9da5c466-2e91-427c-9c67-91d0ae598e61" time="1380195722405" ignored="false" />
     <file path="/ITriggerListener.java" changelist="9da5c466-2e91-427c-9c67-91d0ae598e61" time="1380197125773" ignored="false" />
-    <file path="/AccelerometerTrigger.java" changelist="9da5c466-2e91-427c-9c67-91d0ae598e61" time="1380200984780" ignored="false" />
+    <file path="/AccelerometerTrigger.java" changelist="9da5c466-2e91-427c-9c67-91d0ae598e61" time="1380207650319" ignored="false" />
     <file path="/TestTriggerListener.java" changelist="9da5c466-2e91-427c-9c67-91d0ae598e61" time="1380198226802" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -40,6 +44,7 @@
     <disable_hints />
   </component>
   <component name="DebuggerManager">
+    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <breakpoint_any default_suspend_policy="SuspendAll" default_condition_enabled="true">
       <breakpoint>
         <option name="NOTIFY_CAUGHT" value="true" />
@@ -76,7 +81,6 @@
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
     </breakpoint_any>
-    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <breakpoint_rules />
     <ui_properties />
   </component>
@@ -86,10 +90,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="EagleEyeTest.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tests/src/dk/au/cs/EagleEye2/EagleEyeTest.java">
+      <file leaf-file-name="AccelerometerTriggerTest.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/tests/src/dk/au/cs/EagleEye2/triggers/AccelerometerTriggerTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="2" selection-start="561" selection-end="637" vertical-scroll-proportion="0.0">
+            <state line="18" column="58" selection-start="531" selection-end="531" vertical-scroll-proportion="0.42212188">
               <folding />
             </state>
           </provider>
@@ -98,33 +102,17 @@
       <file leaf-file-name="AccelerometerTrigger.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/dk/au/cs/EagleEye2/triggers/AccelerometerTrigger.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="24" column="23" selection-start="867" selection-end="867" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state line="17" column="45" selection-start="667" selection-end="667" vertical-scroll-proportion="0.0">
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Trigger.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/dk/au/cs/EagleEye2/triggers/Trigger.java">
+      <file leaf-file-name="TimeTriggerTest.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tests/src/dk/au/cs/EagleEye2/triggers/TimeTriggerTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="21" column="38" selection-start="633" selection-end="633" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#290#308#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AccelerometerTriggerTest.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/tests/src/dk/au/cs/EagleEye2/triggers/AccelerometerTriggerTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="31" column="69" selection-start="1097" selection-end="1097" vertical-scroll-proportion="0.4975">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state line="5" column="43" selection-start="123" selection-end="123" vertical-scroll-proportion="0.0">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -132,7 +120,7 @@
       <file leaf-file-name="TestTriggerListener.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tests/src/dk/au/cs/EagleEye2/triggers/TestTriggerListener.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="1" column="0" selection-start="37" selection-end="37" vertical-scroll-proportion="0.0">
+            <state line="17" column="36" selection-start="411" selection-end="411" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -181,10 +169,10 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-3" />
-    <option name="y" value="-3" />
-    <option name="width" value="1286" />
-    <option name="height" value="780" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1616" />
+    <option name="height" value="854" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -382,12 +370,12 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="GoToFile.includeJavaFiles" value="false" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="OverrideImplement.combined" value="true" />
@@ -397,10 +385,12 @@
     <property name="options.lastSelected" value="preferences.sourceCode.Java" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.side.proportion" value="0.0" />
+    <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_SERIALS" value="emulator-5554" />
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
     <property name="restartRequiresConfirmation" value="true" />
     <property name="MemberChooser.showClasses" value="true" />
+    <property name="FullScreen" value="false" />
     <property name="GoToClass.includeLibraries" value="false" />
     <property name="options.searchVisible" value="true" />
     <property name="options.splitter.details.proportions" value="0.2" />
@@ -419,7 +409,7 @@
       <option name="METHOD_NAME" value="" />
       <option name="CLASS_NAME" value="dk.au.cs.EagleEye2.triggers.AccelerometerTriggerTest" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="TARGET_SELECTION_MODE" value="EMULATOR" />
+      <option name="TARGET_SELECTION_MODE" value="SHOW_DIALOG" />
       <option name="PREFERRED_AVD" value="" />
       <option name="USE_COMMAND_LINE" value="true" />
       <option name="COMMAND_LINE" value="" />
@@ -674,7 +664,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-3" y="-3" width="1286" height="780" extended-state="6" />
+    <frame x="-8" y="-8" width="1616" height="854" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -685,14 +675,14 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32861635" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32808024" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26337114" sideWeight="0.6719243" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3280757" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2072072" sideWeight="0.6738506" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32614943" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -766,15 +756,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/tests/src/dk/au/cs/EagleEye2/registrars/ServerRegistrarTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="32" selection-start="317" selection-end="458" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tests/src/dk/au/cs/EagleEye2/registrars/FileRegistrarTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="16" column="57" selection-start="454" selection-end="454" vertical-scroll-proportion="0.0">
@@ -798,38 +779,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/dk/au/cs/EagleEye2/registrars/IRegistrar.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="28" selection-start="156" selection-end="156" vertical-scroll-proportion="0.12886597">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/src/dk/au/cs/EagleEye2/registrars/FileRegistrarTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="3" selection-start="384" selection-end="384" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/src/dk/au/cs/EagleEye2/registrars/ServerRegistrarTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="36" selection-start="292" selection-end="292" vertical-scroll-proportion="0.4875">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/src/dk/au/cs/EagleEye2/triggers/TimeTriggerTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="43" selection-start="123" selection-end="123" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tests/src/dk/au/cs/EagleEye2/triggers/DistanceWithSpeedTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="29" column="3" selection-start="776" selection-end="776" vertical-scroll-proportion="0.85">
@@ -837,9 +786,48 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/README">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/src/dk/au/cs/EagleEye2/EagleEyeTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="2" selection-start="561" selection-end="637" vertical-scroll-proportion="0.4047619">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/src/dk/au/cs/EagleEye2/registrars/ServerRegistrarTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="36" selection-start="292" selection-end="292" vertical-scroll-proportion="0.32886904">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/src/dk/au/cs/EagleEye2/registrars/FileRegistrarTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="3" selection-start="381" selection-end="381" vertical-scroll-proportion="0.43005952">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/tests/src/dk/au/cs/EagleEye2/triggers/DistanceTriggerTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="38" column="49" selection-start="1038" selection-end="1038" vertical-scroll-proportion="0.55">
+        <state line="38" column="49" selection-start="1038" selection-end="1038" vertical-scroll-proportion="0.91071427">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dk/au/cs/EagleEye2/registrars/IRegistrar.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="28" selection-start="155" selection-end="155" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -851,45 +839,38 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests/src/dk/au/cs/EagleEye2/EagleEyeTest.java">
+    <entry file="file://$PROJECT_DIR$/src/dk/au/cs/EagleEye2/triggers/Trigger.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="2" selection-start="561" selection-end="637" vertical-scroll-proportion="0.0">
+        <state line="19" column="24" selection-start="520" selection-end="520" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests/src/dk/au/cs/EagleEye2/triggers/TestTriggerListener.java">
+    <entry file="file://$PROJECT_DIR$/tests/src/dk/au/cs/EagleEye2/triggers/TimeTriggerTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="0" selection-start="37" selection-end="37" vertical-scroll-proportion="0.0">
+        <state line="5" column="43" selection-start="123" selection-end="123" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/dk/au/cs/EagleEye2/triggers/AccelerometerTrigger.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="23" selection-start="867" selection-end="867" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state line="17" column="45" selection-start="667" selection-end="667" vertical-scroll-proportion="0.0">
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/dk/au/cs/EagleEye2/triggers/Trigger.java">
+    <entry file="file://$PROJECT_DIR$/tests/src/dk/au/cs/EagleEye2/triggers/TestTriggerListener.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="38" selection-start="633" selection-end="633" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#290#308#0" expanded="true" />
-          </folding>
+        <state line="17" column="36" selection-start="411" selection-end="411" vertical-scroll-proportion="0.0">
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/tests/src/dk/au/cs/EagleEye2/triggers/AccelerometerTriggerTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="69" selection-start="1097" selection-end="1097" vertical-scroll-proportion="0.4975">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state line="18" column="58" selection-start="531" selection-end="531" vertical-scroll-proportion="0.42212188">
+          <folding />
         </state>
       </provider>
     </entry>
@@ -945,12 +926,11 @@
       </state>
       <state key="ModuleStructureConfigurable.UI">
         <settings>
-          <last-edited>EagleEye-2</last-edited>
+          <last-edited>tests</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
                 <option value="0.2" />
-                <option value="0.5" />
               </list>
             </option>
           </splitter-proportions>
