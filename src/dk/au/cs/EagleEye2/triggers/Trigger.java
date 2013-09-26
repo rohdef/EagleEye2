@@ -1,5 +1,7 @@
 package dk.au.cs.EagleEye2.triggers;
 
+import android.hardware.Sensor;
+
 import java.util.ArrayList;
 
 /**
@@ -15,9 +17,16 @@ public abstract class Trigger {
     listeners.remove(listener);
   }
 
-  public void fireTriggers() {
+  public void fireTriggers(Object geoPosition) {
     for (ITriggerListener listener : listeners) {
-      listener.fireTrigger(null);
+      listener.fireTrigger(geoPosition);
     }
   }
+
+  /**
+   * Due the private constructor in SensorEvent this wrapper is needed to be able to test.
+   * The actual SensorEvent should be unwrapped and send to this method.
+   * @param sensorEvent
+   */
+  public abstract void onSensorChanged(Sensor sensor, int accuracy, long timestamp, float[] values);
 }

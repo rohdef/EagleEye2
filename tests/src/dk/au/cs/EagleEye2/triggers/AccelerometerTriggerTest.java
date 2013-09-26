@@ -20,19 +20,38 @@ public class AccelerometerTriggerTest extends AndroidTestCase {
     accelerometerTrigger.addListener(accelerometerTriggerListener);
   }
 
-  public void testShouldActivateOnMovement() {
+  public void testShouldActivateOnMovementOnXAxis() {
     // Rather abstract, does not specify is a
     // threshold is needed and if so what it
     // would be. If threshold is needed it should
     // probably result in multiple tests.
-
+    float[] accelerometerValues = {0.1f, 0, 0};
+    accelerometerTrigger.onSensorChanged(null, 0, 0, accelerometerValues);
 
     assertEquals(1, accelerometerTriggerListener.getCallCount());
+    assertNotNull(accelerometerTriggerListener.getLastGeoPosition());
+  }
+
+  public void testShouldActivateOnMovementOnYAxis() {
+    float[] accelerometerValues = {0, 0.1f, 0};
+    accelerometerTrigger.onSensorChanged(null, 0, 0, accelerometerValues);
+
+    assertEquals(1, accelerometerTriggerListener.getCallCount());
+    assertNotNull(accelerometerTriggerListener.getLastGeoPosition());
+  }
+
+  public void testShouldActivateOnMovementOnZAxis() {
+    float[] accelerometerValues = {0, 0, 0.1f};
+    accelerometerTrigger.onSensorChanged(null, 0, 0, accelerometerValues);
+
+    assertEquals(1, accelerometerTriggerListener.getCallCount());
+    assertNotNull(accelerometerTriggerListener.getLastGeoPosition());
   }
 
   public void testShouldNotActivateOnNoMovement() {
-    // send movement 0
+    float[] accelerometerValues = {0, 0, 0};
+    accelerometerTrigger.onSensorChanged(null, 0, 0, accelerometerValues);
+
     assertEquals(0, accelerometerTriggerListener.getCallCount());
   }
-
 }
