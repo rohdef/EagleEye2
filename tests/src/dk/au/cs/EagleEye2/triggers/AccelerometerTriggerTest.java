@@ -1,17 +1,38 @@
 package dk.au.cs.EagleEye2.triggers;
 
-import android.test.ActivityInstrumentationTestCase2;
-import dk.au.cs.EagleEye2.EagleEye;
+import android.hardware.SensorEvent;
+import android.test.AndroidTestCase;
 
-/**
- * Created with IntelliJ IDEA.
- * User: rohdef
- * Date: 9/25/13
- * Time: 5:37 PM
- * To change this template use File | Settings | File Templates.
- */
-public class AccelerometerTriggerTest extends ActivityInstrumentationTestCase2<EagleEye> {
+public class AccelerometerTriggerTest extends AndroidTestCase {
+  private AccelerometerTrigger accelerometerTrigger;
+  private TestTriggerListener accelerometerTriggerListener;
+
   public AccelerometerTriggerTest() {
-    super("dk.au.cs.EagleEye2", EagleEye.class);
+
   }
+
+  @Override
+  protected void setUp() throws Exception {
+    super.setUp();
+
+    accelerometerTriggerListener = new TestTriggerListener();
+    accelerometerTrigger = new AccelerometerTrigger();
+    accelerometerTrigger.addListener(accelerometerTriggerListener);
+  }
+
+  public void testShouldActivateOnMovement() {
+    // Rather abstract, does not specify is a
+    // threshold is needed and if so what it
+    // would be. If threshold is needed it should
+    // probably result in multiple tests.
+
+
+    assertEquals(1, accelerometerTriggerListener.getCallCount());
+  }
+
+  public void testShouldNotActivateOnNoMovement() {
+    // send movement 0
+    assertEquals(0, accelerometerTriggerListener.getCallCount());
+  }
+
 }
