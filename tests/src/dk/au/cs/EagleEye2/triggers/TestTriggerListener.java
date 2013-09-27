@@ -1,5 +1,7 @@
 package dk.au.cs.EagleEye2.triggers;
 
+import android.location.Location;
+
 public class TestTriggerListener implements ITriggerListener{
   private int callCount = 0;
   private Object lastGeoPosition = null;
@@ -13,7 +15,7 @@ public class TestTriggerListener implements ITriggerListener{
   }
 
   @Override
-  public void fireTrigger(Object geoPosition) {
+  public void fireTrigger(Location geoPosition) {
     callCount++;
     lastGeoPosition = geoPosition;
   }

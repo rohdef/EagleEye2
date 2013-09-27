@@ -22,7 +22,11 @@ public class AccelerometerTrigger extends Trigger implements SensorEventListener
        onSensorChanged(sensorEvent.sensor, sensorEvent.accuracy, sensorEvent.timestamp, sensorEvent.values);
   }
 
-  @Override
+  /**
+   * Due the private constructor in SensorEvent this wrapper is needed to be able to test.
+   * The actual SensorEvent should be unwrapped and send to this method.
+   * @param sensorEvent
+   */
   public void onSensorChanged(Sensor sensor, int accuracy, long timestamp, float[] values) {
     float x = values[0];
     float y = values[1];

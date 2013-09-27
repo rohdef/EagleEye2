@@ -1,19 +1,26 @@
 package dk.au.cs.EagleEye2.triggers;
 
-import android.test.ActivityInstrumentationTestCase2;
 import android.test.AndroidTestCase;
-import dk.au.cs.EagleEye2.EagleEye;
 
 /**
  * Makes sure the distance trigger only reacts on a
  * threshold of 50 meters or more as specified.
  */
 public class DistanceTriggerTest extends AndroidTestCase {
-  public DistanceTriggerTest() {
+  private DistanceTrigger distanceTrigger;
+  private TestTriggerListener distanceTriggerListener;
+
+  @Override
+  protected void setUp() throws Exception {
+    super.setUp();
+
+    distanceTrigger = new DistanceTrigger(50);
+    distanceTriggerListener = new TestTriggerListener();
   }
 
   public void testShouldActivateOn50MetersMovement() {
-
+    distanceTrigger.locationUpdated(50, null, null);
+    assertEquals(1, distanceTriggerListener.getCallCount());
   }
 
   public void testShouldActivateForMoreThan50MetersMovement() {
