@@ -14,8 +14,9 @@ public class DistanceTriggerTest extends AndroidTestCase {
   protected void setUp() throws Exception {
     super.setUp();
 
-    distanceTrigger = new DistanceTrigger(50);
     distanceTriggerListener = new TestTriggerListener();
+    distanceTrigger = new DistanceTrigger(50);
+    distanceTrigger.addListener(distanceTriggerListener);
   }
 
   public void testShouldActivateOn50MetersMovement() {
@@ -24,11 +25,23 @@ public class DistanceTriggerTest extends AndroidTestCase {
   }
 
   public void testShouldActivateForMoreThan50MetersMovement() {
-
+    distanceTrigger.locationUpdated(60, null, null);
+    assertEquals(1, distanceTriggerListener.getCallCount());
   }
 
   public void testShouldActivateExactlyFourTimesAfter249MetersMovementOrMore() {
-    // Simulate with loop
+    // 30 + 20 + 10 + 55 + 20 + 5 + 20 + 39 + 30 + 20 = 249
+    distanceTrigger.locationUpdated(30, null, null);
+    distanceTrigger.locationUpdated(20, null, null);
+    distanceTrigger.locationUpdated(10, null, null);
+    distanceTrigger.locationUpdated(55, null, null);
+    distanceTrigger.locationUpdated(20, null, null);
+    distanceTrigger.locationUpdated(5, null, null);
+    distanceTrigger.locationUpdated(20, null, null);
+    distanceTrigger.locationUpdated(39, null, null);
+    distanceTrigger.locationUpdated(30, null, null);
+    distanceTrigger.locationUpdated(20, null, null);
+    assertEquals(4, distanceTriggerListener.getCallCount());
   }
 
   public void testShouldNotActivateOnLessThan50MetersMovement() {
@@ -36,6 +49,19 @@ public class DistanceTriggerTest extends AndroidTestCase {
     // If distance can return negative values, we should
     // test for either errors or make sure it turns it
     // into absolute values.
+
+    distanceTrigger.locationUpdated(49, null, null);
+    assertEquals(0, distanceTriggerListener.getCallCount());
+  }
+
+  public void testShouldNotActivateOnLessThan50MetersMovement2() {
+    distanceTrigger.locationUpdated(23, null, null);
+    assertEquals(0, distanceTriggerListener.getCallCount());
+  }
+
+  public void testShouldNotActivateOnLessThan50MetersMovement3() {
+    distanceTrigger.locationUpdated(1, null, null);
+    assertEquals(0, distanceTriggerListener.getCallCount());
   }
 
   // Test configurability

@@ -28,6 +28,12 @@ public class DistanceTrigger extends Trigger implements LocationListener {
   public void locationUpdated(float distanceInMeters, Location newLocation, Location lastLocation) {
     // Wrapper for easy testability
     // this should decide if our event should be fired and then call fireTriggers
+
+    if(thresholdInMeters <= distanceInMeters){
+      fireTriggers(newLocation);
+
+      this.lastLocation = newLocation;
+    }
   }
 
   @Override
