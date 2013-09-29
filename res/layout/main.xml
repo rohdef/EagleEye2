@@ -4,10 +4,52 @@
               android:layout_width="fill_parent"
               android:layout_height="fill_parent"
         >
-    <TextView
+    <TableLayout
             android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:text="Hello World, EagleEye"
-            />
+            android:layout_height="wrap_content">
+        <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent">
+            <Button
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Start"
+                    android:id="@+id/button" android:layout_column="0"/>
+            <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Stop"
+                    android:id="@+id/button1" android:layout_column="1"/>
+        </TableRow>
+    </TableLayout>
+    <RadioGroup
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+        <RadioButton
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="Periodic Reporting Strategy"
+                android:id="@+id/periodicReportingStrategy"
+                android:onClick="strategyChosen"/>
+        <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Distance-based reporting strategy"
+                android:id="@+id/radioButton1"/>
+        <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="DBRS: Max speed"
+                android:id="@+id/radioButton2"/>
+        <RadioButton
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="DBRS: Accelerometer"
+                android:id="@+id/radioButton3"/>
+    </RadioGroup>
+    <ViewSwitcher
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:id="@+id/viewSwitcher"/>
 </LinearLayout>
 

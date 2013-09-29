@@ -3,6 +3,7 @@ package dk.au.cs.EagleEye2;
 import android.app.Activity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import dk.au.cs.EagleEye2.triggers.DistanceTrigger;
 
 public class EagleEye extends Activity {
@@ -15,7 +16,12 @@ public class EagleEye extends Activity {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.main);
 
+
     DistanceTrigger dt = new DistanceTrigger(50);
     dt.startWatchingDistances(this.getBaseContext());
+  }
+
+  public void strategyChosen(View view) {
+    Log.w("fff", "rrr");
   }
 }
