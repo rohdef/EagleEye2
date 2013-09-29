@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.location.Location;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import dk.au.cs.EagleEye2.locationParsers.JsonParser;
 import dk.au.cs.EagleEye2.registrars.FileRegistrar;
 import dk.au.cs.EagleEye2.registrars.IRegistrar;
