@@ -1,5 +1,6 @@
 package dk.au.cs.EagleEye2.triggers;
 
+import android.location.Location;
 import android.test.AndroidTestCase;
 
 /**
@@ -13,15 +14,24 @@ public class TimeTriggerTest extends AndroidTestCase {
   protected void setUp() throws Exception {
     super.setUp();
 
-    timerTrigger = new TimerTrigger();
+    timerTrigger = new TimerTrigger(this.getContext());
     timerTriggerListener = new TestTriggerListener();
+    timerTrigger.addListener(timerTriggerListener);
   }
 
   public void testShouldActivate10TimesIn10Seconds() {
+    Location location;
     for (int i=0; i<10; i++) {
-      timerTrigger.timerTick();
+//      timerTrigger.timerTick();
+      // Should've worked with location mocking, might not work irl
+
+      location = new Location("Test");
+      location.setLongitude(10.0);
+      location.setLatitude(20.0);
+      timerTrigger.onLocationChanged(location);
     }
 
     assertEquals(10, timerTriggerListener.getCallCount());
+    assertNotNull(timerTriggerListener.getLastGeoPosition());
   }
 }

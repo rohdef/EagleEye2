@@ -11,6 +11,9 @@ import java.util.ArrayList;
 public abstract class Trigger {
   private ArrayList<ITriggerListener> listeners = new ArrayList<ITriggerListener>();
 
+  public abstract void startRegistering();
+  public abstract void stopRegistering();
+
   public void addListener(ITriggerListener listener) {
     listeners.add(listener);
   }

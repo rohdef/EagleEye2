@@ -11,24 +11,27 @@ public class DistanceTrigger extends Trigger implements LocationListener {
   // Contains the last location that we triggered on (ie. the one we want to know if we're 50 meters away from.)
   private Location lastLocation;
   private int thresholdInMeters;
+  private LocationManager locationManager;
+  private Context context;
 
-  public DistanceTrigger(int thresholdInMeters) {
+  public DistanceTrigger(int thresholdInMeters, Context context) {
     this.thresholdInMeters = thresholdInMeters;
+    this.context = context;
+
+    locationManager = (LocationManager) context.getSystemService(Context.LOCATION_SERVICE);
   }
 
-  public void startWatchingDistances(Context context) {
+  @Override
+  public void startRegistering() {
     // From the slides
     // http://developer.android.com/reference/android/location/LocationManager.html#requestLocationUpdates(java.lang.String, long, float, android.location.LocationListener)
     //
+    locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, this);
+  }
 
-//    lm = (LocationManager)
-//            context.getSystemService(Context.LOCATION_SERVI
-//                    CE);
-//    lm.requestLocationUpdates(LocationManager.GPS_PR
-//            OVIDER, 0, 0, locationListener);
-
-    LocationManager lm = (LocationManager) context.getSystemService(Context.LOCATION_SERVICE);
-    lm.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, this);
+  @Override
+  public void stopRegistering() {
+    locationManager.removeUpdates(this);
   }
 
   public void locationUpdated(float distanceInMeters, Location newLocation, Location lastLocation) {

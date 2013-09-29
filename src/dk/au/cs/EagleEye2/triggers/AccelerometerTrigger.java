@@ -1,14 +1,30 @@
 package dk.au.cs.EagleEye2.triggers;
 
+import android.content.Context;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
+import android.hardware.SensorManager;
 
 public class AccelerometerTrigger extends Trigger implements SensorEventListener {
   private float minThresholdMovement;
+  private Context context;
+  private SensorManager mSensorManager;
+  private Sensor mAccelerometer;
 
-  public AccelerometerTrigger(float minThresholdMovement) {
+  public AccelerometerTrigger(float minThresholdMovement, Context context) {
     this.minThresholdMovement = minThresholdMovement;
+    this.context = context;
+  }
+
+  public void startRegistering() {
+    mSensorManager = (SensorManager) context.getSystemService(Context.SENSOR_SERVICE);
+    mAccelerometer = mSensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
+    mSensorManager.registerListener(this, mAccelerometer, SensorManager.SENSOR_DELAY_NORMAL);
+  }
+
+  public void stopRegistering() {
+    mSensorManager.unregisterListener(this);
   }
 
   /**
@@ -25,7 +41,6 @@ public class AccelerometerTrigger extends Trigger implements SensorEventListener
   /**
    * Due the private constructor in SensorEvent this wrapper is needed to be able to test.
    * The actual SensorEvent should be unwrapped and send to this method.
-   * @param sensorEvent
    */
   public void onSensorChanged(Sensor sensor, int accuracy, long timestamp, float[] values) {
     float x = values[0];

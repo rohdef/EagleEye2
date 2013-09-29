@@ -15,7 +15,7 @@ public class DistanceTriggerTest extends AndroidTestCase {
     super.setUp();
 
     distanceTriggerListener = new TestTriggerListener();
-    distanceTrigger = new DistanceTrigger(50);
+    distanceTrigger = new DistanceTrigger(50, this.getContext());
     distanceTrigger.addListener(distanceTriggerListener);
   }
 
