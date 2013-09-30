@@ -13,9 +13,7 @@ import android.test.ActivityInstrumentationTestCase2;
  * dk.au.cs.EagleEye2.tests/android.test.InstrumentationTestRunner
  */
 public class EagleEyeTest extends ActivityInstrumentationTestCase2<EagleEye> {
-
   public EagleEyeTest() {
     super("dk.au.cs.EagleEye2", EagleEye.class);
   }
-
 }
