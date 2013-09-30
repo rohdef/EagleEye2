@@ -1,27 +1,47 @@
 package dk.au.cs.EagleEye2.triggers;
 
-import android.test.ActivityInstrumentationTestCase2;
 import android.test.AndroidTestCase;
-import dk.au.cs.EagleEye2.EagleEye;
 
 /**
  * Makes sure the distance trigger only reacts on a
  * threshold of 50 meters or more as specified.
  */
 public class DistanceTriggerTest extends AndroidTestCase {
-  public DistanceTriggerTest() {
+  private DistanceTrigger distanceTrigger;
+  private TestTriggerListener distanceTriggerListener;
+
+  @Override
+  protected void setUp() throws Exception {
+    super.setUp();
+
+    distanceTriggerListener = new TestTriggerListener();
+    distanceTrigger = new DistanceTrigger(50, this.getContext());
+    distanceTrigger.addListener(distanceTriggerListener);
   }
 
   public void testShouldActivateOn50MetersMovement() {
-
+    distanceTrigger.locationUpdated(50, null, null);
+    assertEquals(1, distanceTriggerListener.getCallCount());
   }
 
   public void testShouldActivateForMoreThan50MetersMovement() {
-
+    distanceTrigger.locationUpdated(60, null, null);
+    assertEquals(1, distanceTriggerListener.getCallCount());
   }
 
   public void testShouldActivateExactlyFourTimesAfter249MetersMovementOrMore() {
-    // Simulate with loop
+    // 30 + 20 + 10 + 55 + 20 + 5 + 20 + 39 + 30 + 20 = 249
+    distanceTrigger.locationUpdated(30, null, null);
+    distanceTrigger.locationUpdated(20, null, null);
+    distanceTrigger.locationUpdated(10, null, null);
+    distanceTrigger.locationUpdated(55, null, null);
+    distanceTrigger.locationUpdated(20, null, null);
+    distanceTrigger.locationUpdated(5, null, null);
+    distanceTrigger.locationUpdated(20, null, null);
+    distanceTrigger.locationUpdated(39, null, null);
+    distanceTrigger.locationUpdated(30, null, null);
+    distanceTrigger.locationUpdated(20, null, null);
+    assertEquals(4, distanceTriggerListener.getCallCount());
   }
 
   public void testShouldNotActivateOnLessThan50MetersMovement() {
@@ -29,6 +49,19 @@ public class DistanceTriggerTest extends AndroidTestCase {
     // If distance can return negative values, we should
     // test for either errors or make sure it turns it
     // into absolute values.
+
+    distanceTrigger.locationUpdated(49, null, null);
+    assertEquals(0, distanceTriggerListener.getCallCount());
+  }
+
+  public void testShouldNotActivateOnLessThan50MetersMovement2() {
+    distanceTrigger.locationUpdated(23, null, null);
+    assertEquals(0, distanceTriggerListener.getCallCount());
+  }
+
+  public void testShouldNotActivateOnLessThan50MetersMovement3() {
+    distanceTrigger.locationUpdated(1, null, null);
+    assertEquals(0, distanceTriggerListener.getCallCount());
   }
 
   // Test configurability

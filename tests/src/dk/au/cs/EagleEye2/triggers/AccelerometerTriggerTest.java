@@ -16,20 +16,20 @@ public class AccelerometerTriggerTest extends AndroidTestCase {
     super.setUp();
 
     accelerometerTriggerListener = new TestTriggerListener();
-    accelerometerTrigger = new AccelerometerTrigger();
+    accelerometerTrigger = new AccelerometerTrigger(0.1f, this.getContext());
     accelerometerTrigger.addListener(accelerometerTriggerListener);
   }
 
+  /*
+   * Should activate
+   */
+
   public void testShouldActivateOnMovementOnXAxis() {
-    // Rather abstract, does not specify is a
-    // threshold is needed and if so what it
-    // would be. If threshold is needed it should
-    // probably result in multiple tests.
     float[] accelerometerValues = {0.1f, 0, 0};
     accelerometerTrigger.onSensorChanged(null, 0, 0, accelerometerValues);
 
     assertEquals(1, accelerometerTriggerListener.getCallCount());
-    assertNotNull(accelerometerTriggerListener.getLastGeoPosition());
+    //assertNotNull(accelerometerTriggerListener.getLastGeoPosition());
   }
 
   public void testShouldActivateOnMovementOnYAxis() {
@@ -37,7 +37,7 @@ public class AccelerometerTriggerTest extends AndroidTestCase {
     accelerometerTrigger.onSensorChanged(null, 0, 0, accelerometerValues);
 
     assertEquals(1, accelerometerTriggerListener.getCallCount());
-    assertNotNull(accelerometerTriggerListener.getLastGeoPosition());
+    //assertNotNull(accelerometerTriggerListener.getLastGeoPosition());
   }
 
   public void testShouldActivateOnMovementOnZAxis() {
@@ -45,13 +45,46 @@ public class AccelerometerTriggerTest extends AndroidTestCase {
     accelerometerTrigger.onSensorChanged(null, 0, 0, accelerometerValues);
 
     assertEquals(1, accelerometerTriggerListener.getCallCount());
-    assertNotNull(accelerometerTriggerListener.getLastGeoPosition());
+    //assertNotNull(accelerometerTriggerListener.getLastGeoPosition());
   }
+
+  /*
+   * Should not activate
+   */
+
+  public void testShouldNotActivateOnSmallMovementOnXAxis() {
+    float[] accelerometerValues = {0.09f, 0, 0};
+    accelerometerTrigger.onSensorChanged(null, 0, 0, accelerometerValues);
+
+    assertEquals(0, accelerometerTriggerListener.getCallCount());
+    assertNull(accelerometerTriggerListener.getLastGeoPosition());
+  }
+
+  public void testShouldNotActivateOnSmallMovementOnYAxis() {
+    float[] accelerometerValues = {0, 0.09f, 0};
+    accelerometerTrigger.onSensorChanged(null, 0, 0, accelerometerValues);
+
+    assertEquals(0, accelerometerTriggerListener.getCallCount());
+    assertNull(accelerometerTriggerListener.getLastGeoPosition());
+  }
+
+  public void testShouldNotActivateOnSmallMovementOnZAxis() {
+    float[] accelerometerValues = {0, 0, 0.09f};
+    accelerometerTrigger.onSensorChanged(null, 0, 0, accelerometerValues);
+
+    assertEquals(0, accelerometerTriggerListener.getCallCount());
+    assertNull(accelerometerTriggerListener.getLastGeoPosition());
+  }
+
+  /*
+   * No movement
+   */
 
   public void testShouldNotActivateOnNoMovement() {
     float[] accelerometerValues = {0, 0, 0};
     accelerometerTrigger.onSensorChanged(null, 0, 0, accelerometerValues);
 
     assertEquals(0, accelerometerTriggerListener.getCallCount());
+    assertNull(accelerometerTriggerListener.getLastGeoPosition());
   }
 }
