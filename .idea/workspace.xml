@@ -16,32 +16,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9da5c466-2e91-427c-9c67-91d0ae598e61" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/dk/au/cs/EagleEye2/registrars/FileRegistrar.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/dk/au/cs/EagleEye2/locationParsers/IParser.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/dk/au/cs/EagleEye2/locationParsers/JsonParser.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/dk/au/cs/EagleEye2/registrars/ServerRegistrar.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/gson_2_2_4.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dictionaries/rohdef.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dk/au/cs/EagleEye2/triggers/AccelerometerTrigger.java" afterPath="$PROJECT_DIR$/src/dk/au/cs/EagleEye2/triggers/AccelerometerTrigger.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/dk/au/cs/EagleEye2/triggers/DistanceWithSpeedTrigger.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/src/dk/au/cs/EagleEye2/triggers/AccelerometerTriggerTest.java" afterPath="$PROJECT_DIR$/tests/src/dk/au/cs/EagleEye2/triggers/AccelerometerTriggerTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AndroidManifest.xml" afterPath="$PROJECT_DIR$/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dk/au/cs/EagleEye2/triggers/DistanceTrigger.java" afterPath="$PROJECT_DIR$/src/dk/au/cs/EagleEye2/triggers/DistanceTrigger.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/src/dk/au/cs/EagleEye2/triggers/DistanceTriggerTest.java" afterPath="$PROJECT_DIR$/tests/src/dk/au/cs/EagleEye2/triggers/DistanceTriggerTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/EagleEye-2.iml" afterPath="$PROJECT_DIR$/EagleEye-2.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dk/au/cs/EagleEye2/EagleEye.java" afterPath="$PROJECT_DIR$/src/dk/au/cs/EagleEye2/EagleEye.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dk/au/cs/EagleEye2/registrars/IRegistrar.java" afterPath="$PROJECT_DIR$/src/dk/au/cs/EagleEye2/registrars/IRegistrar.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/src/dk/au/cs/EagleEye2/triggers/TimeTriggerTest.java" afterPath="$PROJECT_DIR$/tests/src/dk/au/cs/EagleEye2/triggers/TimeTriggerTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dk/au/cs/EagleEye2/triggers/TimerTrigger.java" afterPath="$PROJECT_DIR$/src/dk/au/cs/EagleEye2/triggers/TimerTrigger.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dk/au/cs/EagleEye2/triggers/Trigger.java" afterPath="$PROJECT_DIR$/src/dk/au/cs/EagleEye2/triggers/Trigger.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project.properties" afterPath="$PROJECT_DIR$/project.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/project.properties" afterPath="$PROJECT_DIR$/tests/project.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/tests.iml" afterPath="$PROJECT_DIR$/tests/tests.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="EagleEye-2.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="9da5c466-2e91-427c-9c67-91d0ae598e61" time="1380473981215" ignored="false" />
+    <file path="/Dummy.txt" changelist="9da5c466-2e91-427c-9c67-91d0ae598e61" time="1380564677851" ignored="false" />
     <file path="/fragment.java" changelist="9da5c466-2e91-427c-9c67-91d0ae598e61" time="1380480076434" ignored="false" />
     <file path="/IRegistrer.java" changelist="9da5c466-2e91-427c-9c67-91d0ae598e61" time="1380122667772" ignored="false" />
     <file path="/ITrigger.java" changelist="9da5c466-2e91-427c-9c67-91d0ae598e61" time="1380200973384" ignored="false" />
@@ -82,6 +63,7 @@
     <disable_hints />
   </component>
   <component name="DebuggerManager">
+    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <breakpoint_any default_suspend_policy="SuspendAll" default_condition_enabled="true">
       <breakpoint>
         <option name="NOTIFY_CAUGHT" value="true" />
@@ -118,7 +100,6 @@
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
     </breakpoint_any>
-    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <breakpoint_rules />
     <ui_properties />
   </component>
@@ -137,10 +118,19 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="DistanceWithSpeedTrigger.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/dk/au/cs/EagleEye2/triggers/DistanceWithSpeedTrigger.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="3" column="2" selection-start="78" selection-end="78" vertical-scroll-proportion="0.05154639">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="EagleEye.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/dk/au/cs/EagleEye2/EagleEye.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="26" column="17" selection-start="897" selection-end="897" vertical-scroll-proportion="0.0">
+            <state line="15" column="0" selection-start="553" selection-end="923" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -149,7 +139,7 @@
       <file leaf-file-name="DistanceWithSpeedTest.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tests/src/dk/au/cs/EagleEye2/triggers/DistanceWithSpeedTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="13" selection-start="158" selection-end="158" vertical-scroll-proportion="0.0">
+            <state line="0" column="0" selection-start="0" selection-end="779" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -164,13 +154,32 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AccelerometerTrigger.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="AccelerometerTrigger.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/dk/au/cs/EagleEye2/triggers/AccelerometerTrigger.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="42" column="72" selection-start="1628" selection-end="1628" vertical-scroll-proportion="0.9677419">
+            <state line="50" column="23" selection-start="1916" selection-end="1920" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="method#onAccuracyChanged#0;class#AccelerometerTrigger#0" expanded="false" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AccelerometerTriggerTest.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tests/src/dk/au/cs/EagleEye2/triggers/AccelerometerTriggerTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="24" column="5" selection-start="655" selection-end="655" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DistanceTrigger.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/dk/au/cs/EagleEye2/triggers/DistanceTrigger.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="41" column="5" selection-start="1592" selection-end="1592" vertical-scroll-proportion="0.0">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -198,7 +207,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/dk/au/cs/EagleEye2/triggers/ITriggerListener.java" />
         <option value="$PROJECT_DIR$/src/dk/au/cs/EagleEye2/registrars/IRegistrar.java" />
         <option value="$PROJECT_DIR$/src/dk/au/cs/EagleEye2/locationParsers/IParser.java" />
         <option value="$PROJECT_DIR$/src/dk/au/cs/EagleEye2/locationParsers/JsonParser.java" />
@@ -209,18 +217,18 @@
         <option value="$PROJECT_DIR$/src/dk/au/cs/EagleEye2/triggers/TimerTrigger.java" />
         <option value="$PROJECT_DIR$/src/dk/au/cs/EagleEye2/triggers/DistanceTrigger.java" />
         <option value="$PROJECT_DIR$/src/dk/au/cs/EagleEye2/triggers/DistanceTrigger.java" />
-        <option value="$PROJECT_DIR$/tests/src/dk/au/cs/EagleEye2/triggers/AccelerometerTriggerTest.java" />
         <option value="$PROJECT_DIR$/tests/src/dk/au/cs/EagleEye2/triggers/DistanceTriggerTest.java" />
         <option value="$PROJECT_DIR$/tests/src/dk/au/cs/EagleEye2/triggers/TimeTriggerTest.java" />
         <option value="$PROJECT_DIR$/src/dk/au/cs/EagleEye2/EagleEye.java" />
         <option value="$PROJECT_DIR$/src/dk/au/cs/EagleEye2/triggers/AccelerometerTrigger.java" />
+        <option value="$PROJECT_DIR$/tests/src/dk/au/cs/EagleEye2/triggers/AccelerometerTriggerTest.java" />
+        <option value="$PROJECT_DIR$/src/dk/au/cs/EagleEye2/triggers/DistanceWithSpeedTrigger.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="y" value="-3" />
     <option name="width" value="1920" />
-    <option name="height" value="1052" />
+    <option name="height" value="1045" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -273,7 +281,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
@@ -281,10 +288,6 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="EagleEye-2" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="External Libraries" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -308,6 +311,54 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="tests" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="EagleEye-2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="EagleEye-2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tests" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="EagleEye2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="EagleEye-2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="EagleEye-2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tests" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="EagleEye2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="triggers" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -373,44 +424,9 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="EagleEye-2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="EagleEye-2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="EagleEye2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="locationParsers" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="EagleEye-2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="EagleEye-2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="res" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -441,7 +457,7 @@
       <recent name="dk.au.cs.EagleEye2" />
     </key>
   </component>
-  <component name="RunManager" selected="Android Tests.AccelerometerTriggerTest.testShouldActivateOnMovementOnXAxis">
+  <component name="RunManager" selected="Android Tests.AccelerometerTriggerTest.testShouldActivateOnMovementOnYAxis">
     <configuration default="false" name="AccelerometerTriggerTest" type="AndroidTestRunConfigurationType" factoryName="Android Tests" temporary="true">
       <module name="tests" />
       <option name="TESTING_TYPE" value="2" />
@@ -507,6 +523,26 @@
       <option name="TESTING_TYPE" value="3" />
       <option name="INSTRUMENTATION_RUNNER_CLASS" value="" />
       <option name="METHOD_NAME" value="testShouldActivateOnMovementOnXAxis" />
+      <option name="CLASS_NAME" value="dk.au.cs.EagleEye2.triggers.AccelerometerTriggerTest" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TARGET_SELECTION_MODE" value="EMULATOR" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="USE_COMMAND_LINE" value="true" />
+      <option name="COMMAND_LINE" value="" />
+      <option name="WIPE_USER_DATA" value="false" />
+      <option name="DISABLE_BOOT_ANIMATION" value="false" />
+      <option name="NETWORK_SPEED" value="full" />
+      <option name="NETWORK_LATENCY" value="none" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <RunnerSettings RunnerId="AndroidDebugRunner" />
+      <ConfigurationWrapper RunnerId="AndroidDebugRunner" />
+      <method />
+    </configuration>
+    <configuration default="false" name="AccelerometerTriggerTest.testShouldActivateOnMovementOnYAxis" type="AndroidTestRunConfigurationType" factoryName="Android Tests" temporary="true">
+      <module name="tests" />
+      <option name="TESTING_TYPE" value="3" />
+      <option name="INSTRUMENTATION_RUNNER_CLASS" value="" />
+      <option name="METHOD_NAME" value="testShouldActivateOnMovementOnYAxis" />
       <option name="CLASS_NAME" value="dk.au.cs.EagleEye2.triggers.AccelerometerTriggerTest" />
       <option name="PACKAGE_NAME" value="" />
       <option name="TARGET_SELECTION_MODE" value="EMULATOR" />
@@ -720,7 +756,7 @@
       <ConfigurationWrapper RunnerId="AndroidDebugRunner" />
       <method />
     </configuration>
-    <list size="8">
+    <list size="9">
       <item index="0" class="java.lang.String" itemvalue="Android Application.EagleEye-2" />
       <item index="1" class="java.lang.String" itemvalue="Android Application.EagleEye device" />
       <item index="2" class="java.lang.String" itemvalue="Android Tests.tests" />
@@ -729,14 +765,15 @@
       <item index="5" class="java.lang.String" itemvalue="Android Tests.TimeTriggerTest" />
       <item index="6" class="java.lang.String" itemvalue="Android Tests.TimeTriggerTest.testShouldActivate10TimesIn10Seconds" />
       <item index="7" class="java.lang.String" itemvalue="Android Tests.AccelerometerTriggerTest.testShouldActivateOnMovementOnXAxis" />
+      <item index="8" class="java.lang.String" itemvalue="Android Tests.AccelerometerTriggerTest.testShouldActivateOnMovementOnYAxis" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Android Tests.AccelerometerTriggerTest.testShouldActivateOnMovementOnXAxis" />
-        <item index="1" class="java.lang.String" itemvalue="Android Tests.TimeTriggerTest.testShouldActivate10TimesIn10Seconds" />
+        <item index="0" class="java.lang.String" itemvalue="Android Tests.AccelerometerTriggerTest.testShouldActivateOnMovementOnYAxis" />
+        <item index="1" class="java.lang.String" itemvalue="Android Tests.AccelerometerTriggerTest.testShouldActivateOnMovementOnXAxis" />
         <item index="2" class="java.lang.String" itemvalue="Android Tests.TimeTriggerTest.testShouldActivate10TimesIn10Seconds" />
-        <item index="3" class="java.lang.String" itemvalue="Android Tests.TimeTriggerTest" />
-        <item index="4" class="java.lang.String" itemvalue="Android Tests.TimeTriggerTest.testShouldActivate10TimesIn10Seconds" />
+        <item index="3" class="java.lang.String" itemvalue="Android Tests.TimeTriggerTest.testShouldActivate10TimesIn10Seconds" />
+        <item index="4" class="java.lang.String" itemvalue="Android Tests.TimeTriggerTest" />
       </list>
     </recent_temporary>
     <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
@@ -771,11 +808,9 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="-3" width="1920" height="1052" extended-state="2" />
+    <frame x="0" y="0" width="1920" height="1045" extended-state="2" />
     <editor active="true" />
     <layout>
-      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32976446" sideWeight="0.7472406" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32976446" sideWeight="0.7472406" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -790,9 +825,11 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20770878" sideWeight="0.7472406" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25275937" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20877944" sideWeight="0.74860954" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25139043" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32976446" sideWeight="0.7472406" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32976446" sideWeight="0.7472406" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
@@ -865,13 +902,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/dk/au/cs/EagleEye2/registrars/IRegistrar.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="40" selection-start="232" selection-end="232" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/dk/au/cs/EagleEye2/registrars/FileRegistrar.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="34" column="49" selection-start="1121" selection-end="1258" vertical-scroll-proportion="0.0">
@@ -883,9 +913,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/res/layout/main.xml">
       <provider editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
       </provider>
       <provider selected="true" editor-type-id="android-designer">
         <state />
@@ -926,13 +954,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests/src/dk/au/cs/EagleEye2/triggers/AccelerometerTriggerTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="75" selection-start="548" selection-end="548" vertical-scroll-proportion="0.33333334">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tests/src/dk/au/cs/EagleEye2/triggers/TestTriggerListener.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="4" column="13" selection-start="86" selection-end="86" vertical-scroll-proportion="0.0921659">
@@ -947,9 +968,49 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/dk/au/cs/EagleEye2/registrars/ServerRegistrar.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="39" selection-start="275" selection-end="275" vertical-scroll-proportion="0.23041475">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dk/au/cs/EagleEye2/triggers/AccelerometerTrigger.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="50" column="23" selection-start="1916" selection-end="1920" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#onAccuracyChanged#0;class#AccelerometerTrigger#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/src/dk/au/cs/EagleEye2/triggers/AccelerometerTriggerTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="24" column="5" selection-start="655" selection-end="655" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/dk/au/cs/EagleEye2/triggers/DistanceTrigger.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="27" selection-start="706" selection-end="706" vertical-scroll-proportion="0.023041476">
+        <state line="41" column="5" selection-start="1592" selection-end="1592" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/src/dk/au/cs/EagleEye2/triggers/DistanceWithSpeedTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="779" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dk/au/cs/EagleEye2/EagleEye.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="0" selection-start="553" selection-end="923" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -961,35 +1022,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/dk/au/cs/EagleEye2/EagleEye.java">
+    <entry file="file://$PROJECT_DIR$/src/dk/au/cs/EagleEye2/triggers/DistanceWithSpeedTrigger.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="17" selection-start="897" selection-end="897" vertical-scroll-proportion="0.0">
+        <state line="3" column="2" selection-start="78" selection-end="78" vertical-scroll-proportion="0.05154639">
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dk/au/cs/EagleEye2/registrars/ServerRegistrar.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="39" selection-start="275" selection-end="275" vertical-scroll-proportion="0.23041475">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/src/dk/au/cs/EagleEye2/triggers/DistanceWithSpeedTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="13" selection-start="158" selection-end="158" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dk/au/cs/EagleEye2/triggers/AccelerometerTrigger.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="42" column="72" selection-start="1628" selection-end="1628" vertical-scroll-proportion="0.9677419">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>

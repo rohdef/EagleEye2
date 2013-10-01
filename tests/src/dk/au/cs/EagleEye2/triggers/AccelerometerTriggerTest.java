@@ -23,13 +23,12 @@ public class AccelerometerTriggerTest extends AndroidTestCase {
   /*
    * Should activate
    */
-
   public void testShouldActivateOnMovementOnXAxis() {
     float[] accelerometerValues = {0.1f, 0, 0};
     accelerometerTrigger.onSensorChanged(null, 0, 0, accelerometerValues);
 
     assertEquals(1, accelerometerTriggerListener.getCallCount());
-    //assertNotNull(accelerometerTriggerListener.getLastGeoPosition());
+    assertNotNull(accelerometerTriggerListener.getLastGeoPosition());
   }
 
   public void testShouldActivateOnMovementOnYAxis() {
@@ -37,7 +36,7 @@ public class AccelerometerTriggerTest extends AndroidTestCase {
     accelerometerTrigger.onSensorChanged(null, 0, 0, accelerometerValues);
 
     assertEquals(1, accelerometerTriggerListener.getCallCount());
-    //assertNotNull(accelerometerTriggerListener.getLastGeoPosition());
+    assertNotNull(accelerometerTriggerListener.getLastGeoPosition());
   }
 
   public void testShouldActivateOnMovementOnZAxis() {
@@ -45,7 +44,7 @@ public class AccelerometerTriggerTest extends AndroidTestCase {
     accelerometerTrigger.onSensorChanged(null, 0, 0, accelerometerValues);
 
     assertEquals(1, accelerometerTriggerListener.getCallCount());
-    //assertNotNull(accelerometerTriggerListener.getLastGeoPosition());
+    assertNotNull(accelerometerTriggerListener.getLastGeoPosition());
   }
 
   /*
