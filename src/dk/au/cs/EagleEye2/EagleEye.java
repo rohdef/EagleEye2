@@ -105,7 +105,7 @@ public class EagleEye extends Activity implements ITriggerListener {
 
   private void onStartForward(){
     trigger = null;
-    // ToDo: Call some logic
+
     EditText timePeriodView = (EditText) findViewById(R.id.timePeriod);
     EditText distanceView = (EditText) findViewById(R.id.distance);
     EditText maxSpeedView = (EditText) findViewById(R.id.maxSpeed);
@@ -139,7 +139,7 @@ public class EagleEye extends Activity implements ITriggerListener {
       case R.id.distanceBasedReportingStrategyAccelerometer:
         Log.w("EagleEye", "[Start] Distance-Based Reporting Strategy - Accelerometer (Forward) (Distance: "+distance+")");
 
-        int accelerometerMovementThreshold = 1;
+        int accelerometerMovementThreshold = 0;
         trigger = new AccelerometerTrigger(accelerometerMovementThreshold, timePeriod, distance, this.getBaseContext());
 
         break;
@@ -168,8 +168,6 @@ public class EagleEye extends Activity implements ITriggerListener {
   }
 
   private void onStopForward(){
-    RadioGroup reportingStrategy = (RadioGroup) findViewById(R.id.reportingStrategy);
-
     trigger.stopRegistering();
   }
 
