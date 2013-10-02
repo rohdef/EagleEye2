@@ -5,19 +5,20 @@ import android.location.Location;
 import android.os.Environment;
 import android.util.Log;
 import dk.au.cs.EagleEye2.locationParsers.IParser;
+import dk.au.cs.EagleEye2.triggers.Trigger;
 
 import java.io.*;
 
-public class FileRegistrar implements IRegistrar {
+public class FileRegistrar extends Registrar {
   private IParser parser;
-  private Context context;
 
-  public FileRegistrar(IParser parser, Context context) {
+  public FileRegistrar(IParser parser, Trigger trigger) {
+    super(trigger);
     this.parser = parser;
   }
 
   @Override
-  public void storeLocation(Location location) {
+  public void fireTrigger(Location location) {
     String valueToStore = parser.parseLocation(location);
 
     // Check for storage permissions according to documentation

@@ -53,7 +53,8 @@ public class DistanceTrigger extends Trigger implements LocationListener {
 
     if(lastLocation == null){
       lastLocation = location;
-      distance = 0;
+      // Force first location to be regarded as past threshold so we get a first fix.
+      distance = thresholdInMeters;
     }else{
       distance = lastLocation.distanceTo(location);
     }

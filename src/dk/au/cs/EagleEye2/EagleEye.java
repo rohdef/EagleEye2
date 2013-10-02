@@ -1,23 +1,21 @@
 package dk.au.cs.EagleEye2;
 
 import android.app.Activity;
-import android.location.Location;
-import android.os.AsyncTask;
 import android.os.Bundle;
-import android.os.Looper;
 import android.util.Log;
 import android.view.View;
 import android.widget.*;
 import dk.au.cs.EagleEye2.locationParsers.JsonParser;
 import dk.au.cs.EagleEye2.registrars.FileRegistrar;
-import dk.au.cs.EagleEye2.registrars.IRegistrar;
 import dk.au.cs.EagleEye2.registrars.ServerRegistrar;
 import dk.au.cs.EagleEye2.triggers.*;
 
-public class EagleEye extends Activity implements ITriggerListener {
+public class EagleEye extends Activity {
   private boolean running;
   private Runnable taskRunner;
   private Trigger trigger;
+  private ServerRegistrar serverRegistrar;
+  private FileRegistrar fileRegistrar;
 
   /**
    * Called when the activity is first created.
@@ -44,13 +42,6 @@ public class EagleEye extends Activity implements ITriggerListener {
     // Running label
     LinearLayout runningLabel = (LinearLayout) findViewById(R.id.runningLabel);
     runningLabel.setVisibility(running ? View.VISIBLE : View.INVISIBLE);
-  }
-
-  @Override
-  public void fireTrigger(Location geoPosition) {
-    Log.w("EagleEye", "We passed 50 meters");
-    IRegistrar registrar = new FileRegistrar(new JsonParser(), this.getBaseContext());
-    registrar.storeLocation(geoPosition);
   }
 
   public void onStrategyChosen(View v){
@@ -145,6 +136,10 @@ public class EagleEye extends Activity implements ITriggerListener {
         break;
     }
 
+    serverRegistrar = new ServerRegistrar(new JsonParser(), trigger);
+    serverRegistrar.startRegistering();
+    fileRegistrar = new FileRegistrar(new JsonParser(), trigger);
+    fileRegistrar.startRegistering();
     trigger.startRegistering();
   }
 
@@ -168,6 +163,8 @@ public class EagleEye extends Activity implements ITriggerListener {
   }
 
   private void onStopForward(){
+    fileRegistrar.stopRegistering();
+    serverRegistrar.stopRegistering();
     trigger.stopRegistering();
   }
 

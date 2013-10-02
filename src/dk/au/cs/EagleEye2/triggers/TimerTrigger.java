@@ -12,11 +12,13 @@ import android.util.Log;
 import java.util.Timer;
 import java.util.TimerTask;
 
-public class TimerTrigger extends Trigger implements LocationListener {
+public class TimerTrigger extends Trigger implements LocationListener, Runnable {
   private Context context;
   private Timer timer;
   private LocationManager locationManager;
   private long timeInMilliSeconds;
+  private Thread thread;
+  boolean running = false;
 
   public TimerTrigger(int timeInSeconds, Context context) {
     this.context = context;
@@ -26,29 +28,34 @@ public class TimerTrigger extends Trigger implements LocationListener {
 
   @Override
   public void startRegistering() {
-    timer = new Timer();
+    thread = new Thread(this);
+    thread.start();;
+  }
 
-    // This has to be done with an anonymous class, since it's an abstract class
-    // and we're already extending a class. Just distribute the event to a method
-    // which is testable.
-    timer.scheduleAtFixedRate(new TimerTask() {
-      @Override
-      public void run() {
-        timerTick();
+  @Override
+  public void run() {
+    running = true;
+
+    while (running) {
+      timerTick();
+      try {
+        Thread.sleep(timeInMilliSeconds);
+      } catch (InterruptedException e) {
+        e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
       }
-    }, 0, timeInMilliSeconds);
+    }
   }
 
   @Override
   public void stopRegistering() {
-    timer.cancel();
+    running = false;
   }
 
   public void timerTick() {
     Log.w("EagleEye", "Tick");
     // http://stackoverflow.com/questions/7979230/how-to-read-location-only-once-with-locationmanager-gps-and-network-provider-a
 
-    locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, this);
+    locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, this, Looper.getMainLooper());
   }
 
   @Override
