@@ -6,7 +6,7 @@
         >
     <TableLayout
             android:layout_width="fill_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content" android:focusable="true">
         <TableRow
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent">
@@ -14,42 +14,118 @@
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:text="Start"
-                    android:id="@+id/button" android:layout_column="0"/>
+                    android:id="@+id/start" android:layout_column="0" android:onClick="onStart"/>
             <Button
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Stop"
-                    android:id="@+id/button1" android:layout_column="1"/>
+                    android:id="@+id/stop" android:layout_column="1" android:onClick="onStop"/>
         </TableRow>
     </TableLayout>
+    <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" android:id="@+id/runningLabel">
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Running"
+                android:id="@+id/textView6" android:textSize="@dimen/Time"/>
+    </LinearLayout>
     <RadioGroup
             android:layout_width="fill_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content" android:id="@+id/reportingStrategy">
         <RadioButton
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:text="Periodic Reporting Strategy"
                 android:id="@+id/periodicReportingStrategy"
-                android:onClick="strategyChosen"/>
+                android:onClick="onStrategyChosen"/>
         <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Distance-based reporting strategy"
-                android:id="@+id/radioButton1"/>
+                android:id="@+id/distanceBasedReportingStrategy"
+                android:onClick="onStrategyChosen"/>
         <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="DBRS: Max speed"
-                android:id="@+id/radioButton2"/>
+                android:id="@+id/distanceBasedReportingStrategyMaxSpeed"
+                android:onClick="onStrategyChosen"/>
         <RadioButton
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:text="DBRS: Accelerometer"
-                android:id="@+id/radioButton3"/>
+                android:id="@+id/distanceBasedReportingStrategyAccelerometer"
+                android:onClick="onStrategyChosen"/>
     </RadioGroup>
-    <ViewSwitcher
+    <TableLayout
             android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:id="@+id/viewSwitcher"/>
+            android:layout_height="wrap_content"
+            android:id="@+id/periodicReportingStrategySettings">
+        <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent">
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Time period:"
+                    android:id="@+id/textView" android:layout_column="0"/>
+            <EditText
+                    android:layout_width="@dimen/Time"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/timePeriod" android:layout_column="1" android:text="1"/>
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="seconds"
+                    android:id="@+id/textView1" android:layout_column="2"/>
+        </TableRow>
+    </TableLayout>
+    <TableLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" android:id="@+id/distanceBasedRaportingStrategySettings">
+        <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent">
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Distance:"
+                    android:id="@+id/textView2" android:layout_column="0"/>
+            <EditText
+                    android:layout_width="@dimen/Time"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/distance" android:layout_column="1" android:text="50"/>
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="meters"
+                    android:id="@+id/textView3" android:layout_column="2"/>
+        </TableRow>
+    </TableLayout>
+    <TableLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" android:id="@+id/dbrsMaxSpeedSettings">
+        <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent">
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Maximum speed:"
+                    android:id="@+id/textView4"/>
+            <EditText
+                    android:layout_width="@dimen/Time"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/maxSpeed" android:inputType="number" android:text="2"/>
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="meters / second"
+                    android:id="@+id/textView5"/>
+        </TableRow>
+    </TableLayout>
 </LinearLayout>
 
