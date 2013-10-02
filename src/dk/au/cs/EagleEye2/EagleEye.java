@@ -130,7 +130,7 @@ public class EagleEye extends Activity {
       case R.id.distanceBasedReportingStrategyAccelerometer:
         Log.w("EagleEye", "[Start] Distance-Based Reporting Strategy - Accelerometer (Forward) (Distance: "+distance+")");
 
-        int accelerometerMovementThreshold = 0;
+        int accelerometerMovementThreshold = 2;
         trigger = new AccelerometerTrigger(accelerometerMovementThreshold, timePeriod, distance, this.getBaseContext());
 
         break;

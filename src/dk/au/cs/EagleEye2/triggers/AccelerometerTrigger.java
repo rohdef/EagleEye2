@@ -35,7 +35,7 @@ public class AccelerometerTrigger extends Trigger implements SensorEventListener
 
   public void startRegistering() {
     mSensorManager = (SensorManager) context.getSystemService(Context.SENSOR_SERVICE);
-    mAccelerometer = mSensorManager.getDefaultSensor(Sensor.TYPE_LINEAR_ACCELERATION);
+    mAccelerometer = mSensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
     mSensorManager.registerListener(this, mAccelerometer, SensorManager.SENSOR_DELAY_NORMAL);
     running = false;
   }
@@ -77,11 +77,12 @@ public class AccelerometerTrigger extends Trigger implements SensorEventListener
     lastZ = z;
 
     // Aendre til sqrt(x^2+y^2+z^2)
-    Log.w("EagleEye", "Reading " + x + " " + y + " " + z);
+    float gravity = 9.81f;
+    float movementChange = (float) Math.sqrt(x*x+y*y+z*z)-gravity;
+    Log.w("EagleEye", "dMov" + movementChange);
 
 
-    if ((minThresholdMovement <= differenceX || minThresholdMovement <= differenceY || minThresholdMovement <= differenceZ) &&
-            !running) {
+    if (minThresholdMovement <= movementChange && !running) {
       Log.w("EagleEye", "Movent accepted at " + x + " " + y + " " + z);
       running = true;
       lastTimestamp = timestamp+timeThreshold;
