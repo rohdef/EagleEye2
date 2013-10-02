@@ -16,7 +16,7 @@ public class AccelerometerTriggerTest extends AndroidTestCase {
     super.setUp();
 
     accelerometerTriggerListener = new TestTriggerListener();
-    accelerometerTrigger = new AccelerometerTrigger(0.1f, this.getContext());
+    accelerometerTrigger = new AccelerometerTrigger(0.1f, 2, 50, this.getContext());
     accelerometerTrigger.addListener(accelerometerTriggerListener);
   }
 

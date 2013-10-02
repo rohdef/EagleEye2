@@ -15,9 +15,13 @@ import java.util.TimerTask;
 public class TimerTrigger extends Trigger implements LocationListener {
   private Context context;
   private Timer timer;
+  private LocationManager locationManager;
+  private long timeInMilliSeconds;
 
-  public TimerTrigger(Context context) {
+  public TimerTrigger(int timeInSeconds, Context context) {
     this.context = context;
+    this.locationManager = (LocationManager) context.getSystemService(context.LOCATION_SERVICE);
+    this.timeInMilliSeconds = timeInSeconds*1000;
   }
 
   @Override
@@ -32,7 +36,7 @@ public class TimerTrigger extends Trigger implements LocationListener {
       public void run() {
         timerTick();
       }
-    }, 0, 0);
+    }, 0, timeInMilliSeconds);
   }
 
   @Override
@@ -41,15 +45,17 @@ public class TimerTrigger extends Trigger implements LocationListener {
   }
 
   public void timerTick() {
-    // http://stackoverflow.com/questions/7979230/how-to-read-location-only-once-with-locationmanager-gps-and-network-provider-a
     Log.w("EagleEye", "Tick");
-    LocationManager lm = (LocationManager) context.getSystemService(context.LOCATION_SERVICE);
-    lm.requestSingleUpdate(LocationManager.GPS_PROVIDER, this, Looper.myLooper());
+    // http://stackoverflow.com/questions/7979230/how-to-read-location-only-once-with-locationmanager-gps-and-network-provider-a
+
+    locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, this);
   }
 
   @Override
   public void onLocationChanged(Location location) {
-    Log.w("EagleEye", "GPS");
+    Log.w("EagleEye", "Location");
+
+    locationManager.removeUpdates(this);
     this.fireTriggers(location);
   }
 

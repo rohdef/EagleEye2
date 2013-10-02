@@ -2,7 +2,9 @@ package dk.au.cs.EagleEye2;
 
 import android.app.Activity;
 import android.location.Location;
+import android.os.AsyncTask;
 import android.os.Bundle;
+import android.os.Looper;
 import android.util.Log;
 import android.view.View;
 import android.widget.*;
@@ -10,11 +12,12 @@ import dk.au.cs.EagleEye2.locationParsers.JsonParser;
 import dk.au.cs.EagleEye2.registrars.FileRegistrar;
 import dk.au.cs.EagleEye2.registrars.IRegistrar;
 import dk.au.cs.EagleEye2.registrars.ServerRegistrar;
-import dk.au.cs.EagleEye2.triggers.DistanceTrigger;
-import dk.au.cs.EagleEye2.triggers.ITriggerListener;
+import dk.au.cs.EagleEye2.triggers.*;
 
 public class EagleEye extends Activity implements ITriggerListener {
   private boolean running;
+  private Runnable taskRunner;
+  private Trigger trigger;
 
   /**
    * Called when the activity is first created.
@@ -27,9 +30,11 @@ public class EagleEye extends Activity implements ITriggerListener {
     setContentView(R.layout.main);
     normalizeUI();
 
-    DistanceTrigger dt = new DistanceTrigger(50, this.getBaseContext());
-    dt.addListener(this);
-    dt.startRegistering();
+
+//    DistanceTrigger dt = new DistanceTrigger(50, this.getBaseContext());
+//    dt.addListener(this);
+//    dt.startRegistering();
+
   }
 
   private void normalizeUI(){
@@ -70,7 +75,7 @@ public class EagleEye extends Activity implements ITriggerListener {
     TableLayout dbrsSettings = (TableLayout) findViewById(R.id.distanceBasedRaportingStrategySettings);
     TableLayout dbrsMaxSpeedSettings = (TableLayout) findViewById(R.id.dbrsMaxSpeedSettings);
 
-    prsSettings.setVisibility(!running && prs.isChecked() ? View.VISIBLE : View.INVISIBLE);
+    prsSettings.setVisibility(!running && (prs.isChecked() || dbrsAccelerometer.isChecked()) ? View.VISIBLE : View.INVISIBLE);
     dbrsSettings.setVisibility(!running && (dbrs.isChecked() || dbrsMaxSpeed.isChecked()) || dbrsAccelerometer.isChecked() ? View.VISIBLE : View.INVISIBLE);
     dbrsMaxSpeedSettings.setVisibility(!running && dbrsMaxSpeed.isChecked() ? View.VISIBLE : View.INVISIBLE);
   }
@@ -99,6 +104,7 @@ public class EagleEye extends Activity implements ITriggerListener {
   }
 
   private void onStartForward(){
+    trigger = null;
     // ToDo: Call some logic
     EditText timePeriodView = (EditText) findViewById(R.id.timePeriod);
     EditText distanceView = (EditText) findViewById(R.id.distance);
@@ -113,17 +119,33 @@ public class EagleEye extends Activity implements ITriggerListener {
     switch(reportingStrategy.getCheckedRadioButtonId()){
       case R.id.periodicReportingStrategy:
         Log.w("EagleEye", "[Start] Periodic Reporting Strategy (Forward) (Time period: "+timePeriod+")");
+
+
+        trigger = new TimerTrigger(timePeriod, getBaseContext());
+
         break;
       case R.id.distanceBasedReportingStrategy:
         Log.w("EagleEye", "[Start] Distance-Based Reporting Strategy (Forward) (Distance: "+distance+")");
+
+        trigger = new DistanceTrigger(distance, this.getBaseContext());
+
         break;
       case R.id.distanceBasedReportingStrategyMaxSpeed:
         Log.w("EagleEye", "[Start] Distance-Based Reporting Strategy - Maximum Speed (Forward) (Distance: "+distance+", Max speed: "+maxSpeed+")");
+
+        trigger = new DistanceWithSpeedTrigger(maxSpeed, distance, this.getBaseContext());
+
         break;
       case R.id.distanceBasedReportingStrategyAccelerometer:
         Log.w("EagleEye", "[Start] Distance-Based Reporting Strategy - Accelerometer (Forward) (Distance: "+distance+")");
+
+        int accelerometerMovementThreshold = 1;
+        trigger = new AccelerometerTrigger(accelerometerMovementThreshold, timePeriod, distance, this.getBaseContext());
+
         break;
     }
+
+    trigger.startRegistering();
   }
 
   // Stop
@@ -146,23 +168,9 @@ public class EagleEye extends Activity implements ITriggerListener {
   }
 
   private void onStopForward(){
-    // ToDo: Call some logic
     RadioGroup reportingStrategy = (RadioGroup) findViewById(R.id.reportingStrategy);
 
-    switch(reportingStrategy.getCheckedRadioButtonId()){
-      case R.id.periodicReportingStrategy:
-        Log.w("EagleEye", "[Stop] Periodic Reporting Strategy (Forward)");
-        break;
-      case R.id.distanceBasedReportingStrategy:
-        Log.w("EagleEye", "[Stop] Distance-Based Reporting Strategy (Forward)");
-        break;
-      case R.id.distanceBasedReportingStrategyMaxSpeed:
-        Log.w("EagleEye", "[Stop] Distance-Based Reporting Strategy - Maximum Speed (Forward)");
-        break;
-      case R.id.distanceBasedReportingStrategyAccelerometer:
-        Log.w("EagleEye", "[Stop] Distance-Based Reporting Strategy - Accelerometer (Forward)");
-        break;
-    }
+    trigger.stopRegistering();
   }
 
   // Start / Stop common
