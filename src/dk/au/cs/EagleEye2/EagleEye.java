@@ -67,7 +67,7 @@ public class EagleEye extends Activity {
     TableLayout dbrsMaxSpeedSettings = (TableLayout) findViewById(R.id.dbrsMaxSpeedSettings);
 
     prsSettings.setVisibility(!running && (prs.isChecked() || dbrsAccelerometer.isChecked()) ? View.VISIBLE : View.INVISIBLE);
-    dbrsSettings.setVisibility(!running && (dbrs.isChecked() || dbrsMaxSpeed.isChecked()) || dbrsAccelerometer.isChecked() ? View.VISIBLE : View.INVISIBLE);
+    dbrsSettings.setVisibility(!running && (dbrs.isChecked() || dbrsMaxSpeed.isChecked() || dbrsAccelerometer.isChecked()) ? View.VISIBLE : View.INVISIBLE);
     dbrsMaxSpeedSettings.setVisibility(!running && dbrsMaxSpeed.isChecked() ? View.VISIBLE : View.INVISIBLE);
   }
 
