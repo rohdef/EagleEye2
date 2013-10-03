@@ -72,27 +72,28 @@ public class AccelerometerTrigger extends Trigger implements SensorEventListener
     float differenceY = y-lastY;
     float differenceZ = z-lastZ;
 
-    lastX = x;
-    lastY = y;
-    lastZ = z;
-
-    // Aendre til sqrt(x^2+y^2+z^2)
     float gravity = 9.81f;
     float movementChange = (float) Math.sqrt(x*x+y*y+z*z)-gravity;
     Log.w("EagleEye", "dMov" + movementChange);
 
 
-    if (minThresholdMovement <= movementChange && !running) {
+    if (minThresholdMovement <= movementChange) {
       Log.w("EagleEye", "Movent accepted at " + x + " " + y + " " + z);
-      running = true;
       lastTimestamp = timestamp+timeThreshold;
 
-      locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, this);
+      if (!running)
+        locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, this);
+
+      running = true;
     } else if (running) {
       Log.w("EagleEye", "Stop running");
       running = false;
       lastTimestamp = timestamp+timeThreshold;
     }
+
+    lastX = x;
+    lastY = y;
+    lastZ = z;
   }
 
   @Override
@@ -111,7 +112,7 @@ public class AccelerometerTrigger extends Trigger implements SensorEventListener
 
     if(lastLocation == null){
       lastLocation = location;
-      distance = 0;
+      distance = thresholdInMeters;
     }else{
       distance = lastLocation.distanceTo(location);
     }

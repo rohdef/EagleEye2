@@ -1,7 +1,6 @@
 package dk.au.cs.EagleEye2.triggers;
 
 import android.content.Context;
-import android.hardware.Sensor;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
@@ -16,7 +15,8 @@ public class DistanceWithSpeedTrigger extends Trigger implements LocationListene
   private LocationManager locationManager;
   private long timeInMilliSeconds;
   private Thread thread;
-  boolean running = false;
+  private boolean running = false;
+  private int tickCount, locationCount;
 
   public DistanceWithSpeedTrigger(int maxSpeedInMetersPerSecond, int thresholdInMeters, Context context) {
     this.maxSpeedInMetersPerSecond = maxSpeedInMetersPerSecond;
@@ -31,6 +31,8 @@ public class DistanceWithSpeedTrigger extends Trigger implements LocationListene
 
   @Override
   public void startRegistering() {
+    tickCount = locationCount = 0;
+
     thread = new Thread(this);
     thread.start();;
   }
@@ -52,10 +54,15 @@ public class DistanceWithSpeedTrigger extends Trigger implements LocationListene
   @Override
   public void stopRegistering() {
     running = false;
+
+    int tickLocationDifference = tickCount-locationCount;
+    Log.w("EagleEye", "Ticks:" + tickCount + ", locations:" + locationCount + ", ticks-locations:" + tickLocationDifference);
   }
 
   public void timerTick() {
-    Log.w("EagleEye", "Tick");
+    tickCount++;
+
+    Log.w("EagleEye", "Tick: " + tickCount);
     // http://stackoverflow.com/questions/7979230/how-to-read-location-only-once-with-locationmanager-gps-and-network-provider-a
 
     locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, this, Looper.getMainLooper());
@@ -91,8 +98,9 @@ public class DistanceWithSpeedTrigger extends Trigger implements LocationListene
       this.lastLocation = newLocation;
     }
 
+    float distanceRemaining = thresholdInMeters-distanceInMeters;
     locationManager.removeUpdates(this);
-    long sleepTime = (long) ((distanceInMeters/maxSpeedInMetersPerSecond)*1000);
+    long sleepTime = (long) ((distanceRemaining/maxSpeedInMetersPerSecond)*1000);
 
     try {
       Thread.sleep(sleepTime);
