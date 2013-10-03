@@ -13,6 +13,7 @@ public class DistanceTrigger extends Trigger implements LocationListener {
   private int thresholdInMeters;
   private LocationManager locationManager;
   private Context context;
+  private int tickCount, locationCount;
 
   public DistanceTrigger(int thresholdInMeters, Context context) {
     this.thresholdInMeters = thresholdInMeters;
@@ -26,11 +27,15 @@ public class DistanceTrigger extends Trigger implements LocationListener {
     // From the slides
     // http://developer.android.com/reference/android/location/LocationManager.html#requestLocationUpdates(java.lang.String, long, float, android.location.LocationListener)
     //
+    tickCount = 0;
+    locationCount = 0;
+
     locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, this);
   }
 
   @Override
   public void stopRegistering() {
+    Log.w("EagleEye", "Ticks: " + tickCount + " locations: " + locationCount + " difference: " + (tickCount-locationCount));
     locationManager.removeUpdates(this);
   }
 
@@ -38,9 +43,12 @@ public class DistanceTrigger extends Trigger implements LocationListener {
     // Wrapper for easy testability
     // this should decide if our event should be fired and then call fireTriggers
 
-    Log.w("EagleEye", "distanceInMeters: " + distanceInMeters + ", newLocation: " + newLocation + ", lastLocation: " + lastLocation);
+    Log.w("EagleEye", "distanceInMeters: " + distanceInMeters + " ticks: " + tickCount);
 
     if(thresholdInMeters <= distanceInMeters){
+      locationCount++;
+      Log.w("EagleEye", "Locations: " + locationCount);
+
       fireTriggers(newLocation);
 
       this.lastLocation = newLocation;
@@ -49,6 +57,7 @@ public class DistanceTrigger extends Trigger implements LocationListener {
 
   @Override
   public void onLocationChanged(Location location) {
+    tickCount++;
     float distance;
 
     if(lastLocation == null){

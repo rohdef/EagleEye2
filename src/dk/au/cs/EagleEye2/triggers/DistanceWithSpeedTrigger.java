@@ -90,7 +90,7 @@ public class DistanceWithSpeedTrigger extends Trigger implements LocationListene
     // Wrapper for easy testability
     // this should decide if our event should be fired and then call fireTriggers
 
-    Log.w("EagleEye", "distanceInMeters: " + distanceInMeters + ", newLocation: " + newLocation + ", lastLocation: " + lastLocation);
+    Log.w("EagleEye", "distanceInMeters: " + distanceInMeters);
 
     if(thresholdInMeters <= distanceInMeters){
       fireTriggers(newLocation);
