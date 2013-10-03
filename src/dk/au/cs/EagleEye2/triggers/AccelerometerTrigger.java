@@ -22,6 +22,7 @@ public class AccelerometerTrigger extends Trigger implements SensorEventListener
   private long lastTimestamp, timeThreshold;
   private boolean running = false;
   private int thresholdInMeters;
+  private int movementTicks, locationTicks, acceptedLocationTicks;
 
   public AccelerometerTrigger(float minThresholdMovement, int timeThreshold, int thresholdInMeters, Context context) {
     this.thresholdInMeters = thresholdInMeters;
@@ -34,6 +35,8 @@ public class AccelerometerTrigger extends Trigger implements SensorEventListener
   }
 
   public void startRegistering() {
+    movementTicks = locationTicks = acceptedLocationTicks = 0;
+
     mSensorManager = (SensorManager) context.getSystemService(Context.SENSOR_SERVICE);
     mAccelerometer = mSensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
     mSensorManager.registerListener(this, mAccelerometer, SensorManager.SENSOR_DELAY_NORMAL);
@@ -41,6 +44,11 @@ public class AccelerometerTrigger extends Trigger implements SensorEventListener
   }
 
   public void stopRegistering() {
+    int movementLocationDifference = movementTicks-locationTicks;
+    int acceptedLocationDifference = locationTicks-acceptedLocationTicks;
+    Log.w("EagleEye", "MovementTicks:" + movementTicks + ", locations:" + locationTicks + ", acceptedLocationCount: " + acceptedLocationTicks +
+      ", movements-locations:" + movementLocationDifference + ", locations-acceptedLocations: " + acceptedLocationDifference);
+
     mSensorManager.unregisterListener(this);
     locationManager.removeUpdates(this);
     running = false;

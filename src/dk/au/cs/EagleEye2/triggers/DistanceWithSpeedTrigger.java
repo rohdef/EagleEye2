@@ -16,7 +16,7 @@ public class DistanceWithSpeedTrigger extends Trigger implements LocationListene
   private long timeInMilliSeconds;
   private Thread thread;
   private boolean running = false;
-  private int tickCount, locationCount;
+  private int tickCount, locationCount, acceptedLocationCount;
 
   public DistanceWithSpeedTrigger(int maxSpeedInMetersPerSecond, int thresholdInMeters, Context context) {
     this.maxSpeedInMetersPerSecond = maxSpeedInMetersPerSecond;
@@ -31,7 +31,7 @@ public class DistanceWithSpeedTrigger extends Trigger implements LocationListene
 
   @Override
   public void startRegistering() {
-    tickCount = locationCount = 0;
+    tickCount = locationCount = acceptedLocationCount = 0;
 
     thread = new Thread(this);
     thread.start();;
@@ -56,7 +56,9 @@ public class DistanceWithSpeedTrigger extends Trigger implements LocationListene
     running = false;
 
     int tickLocationDifference = tickCount-locationCount;
-    Log.w("EagleEye", "Ticks:" + tickCount + ", locations:" + locationCount + ", ticks-locations:" + tickLocationDifference);
+    int acceptedLocationDifference = locationCount-acceptedLocationCount;
+    Log.w("EagleEye", "Ticks:" + tickCount + ", locations:" + locationCount + ", acceptedLocationCount: " + acceptedLocationCount +
+      ", ticks-locations:" + tickLocationDifference + ", locations-acceptedLocations: " + acceptedLocationDifference);
   }
 
   public void timerTick() {
@@ -70,7 +72,7 @@ public class DistanceWithSpeedTrigger extends Trigger implements LocationListene
 
   @Override
   public void onLocationChanged(Location location) {
-    Log.w("EagleEye", "Location recieved");
+    locationCount++;
     locationManager.removeUpdates(this);
 
     float distance;
@@ -90,9 +92,11 @@ public class DistanceWithSpeedTrigger extends Trigger implements LocationListene
     // Wrapper for easy testability
     // this should decide if our event should be fired and then call fireTriggers
 
-    Log.w("EagleEye", "distanceInMeters: " + distanceInMeters);
+    Log.w("EagleEye", "distanceInMeters: " + distanceInMeters + " locationCount: " + locationCount);
 
-    if(thresholdInMeters <= distanceInMeters){
+    if(thresholdInMeters <= distanceInMeters) {
+      acceptedLocationCount++;
+      Log.w("EagleEye", "Accepted location count: " + acceptedLocationCount);
       fireTriggers(newLocation);
 
       this.lastLocation = newLocation;
