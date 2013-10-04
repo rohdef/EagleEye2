@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:xal="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0">
+    <Document>
+        <name>DBRS: Accelerometer</name>
+        <Style id="EagleEye">
+            <IconStyle>
+                <scale>1.0</scale>
+                <heading>0.0</heading>
+                <Icon>
+                    <href>http://www.google.com/mapfiles/ms/micons/blue.png</href>
+                    <refreshInterval>0.0</refreshInterval>
+                    <viewRefreshTime>0.0</viewRefreshTime>
+                    <viewBoundScale>0.0</viewBoundScale>
+                </Icon>
+            </IconStyle>
+            <LineStyle>
+                <color>55ff0000</color>
+                <width>3.0</width>
+            </LineStyle>
+        </Style>
+        <Placemark>
+            <name>Path</name>
+            <styleUrl>EagleEye</styleUrl>
+            <LineString>
+                <coordinates>10.190209960548826,56.17121648474915 10.19002611278246,56.170774414543516 10.189814828467247,56.170328838541714 10.189645032807228,56.169877156482485 10.189450877744662,56.16943931481609 10.189192500937935,56.169011766872636 10.188451109552863,56.16920992263159 10.187729700256165,56.169532046735426 10.187332844235348,56.16993938791994 10.187259381472353,56.170396283610415 10.187377758893135,56.17089735468741 10.187709074134577,56.17131409873888 10.188110268425065,56.17171558575554 10.188867300273468,56.171560286024736 10.189666726364266,56.171467878826</coordinates>
+            </LineString>
+        </Placemark>
+        <Placemark>
+            <name>Location 0</name>
+            <styleUrl>EagleEye</styleUrl>
+            <Point>
+                <coordinates>10.190209960548826,56.17121648474915</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>Location 1</name>
+            <styleUrl>EagleEye</styleUrl>
+            <Point>
+                <coordinates>10.19002611278246,56.170774414543516</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>Location 2</name>
+            <styleUrl>EagleEye</styleUrl>
+            <Point>
+                <coordinates>10.189814828467247,56.170328838541714</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>Location 3</name>
+            <styleUrl>EagleEye</styleUrl>
+            <Point>
+                <coordinates>10.189645032807228,56.169877156482485</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>Location 4</name>
+            <styleUrl>EagleEye</styleUrl>
+            <Point>
+                <coordinates>10.189450877744662,56.16943931481609</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>Location 5</name>
+            <styleUrl>EagleEye</styleUrl>
+            <Point>
+                <coordinates>10.189192500937935,56.169011766872636</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>Location 6</name>
+            <styleUrl>EagleEye</styleUrl>
+            <Point>
+                <coordinates>10.188451109552863,56.16920992263159</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>Location 7</name>
+            <styleUrl>EagleEye</styleUrl>
+            <Point>
+                <coordinates>10.187729700256165,56.169532046735426</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>Location 8</name>
+            <styleUrl>EagleEye</styleUrl>
+            <Point>
+                <coordinates>10.187332844235348,56.16993938791994</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>Location 9</name>
+            <styleUrl>EagleEye</styleUrl>
+            <Point>
+                <coordinates>10.187259381472353,56.170396283610415</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>Location 10</name>
+            <styleUrl>EagleEye</styleUrl>
+            <Point>
+                <coordinates>10.187377758893135,56.17089735468741</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>Location 11</name>
+            <styleUrl>EagleEye</styleUrl>
+            <Point>
+                <coordinates>10.187709074134577,56.17131409873888</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>Location 12</name>
+            <styleUrl>EagleEye</styleUrl>
+            <Point>
+                <coordinates>10.188110268425065,56.17171558575554</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>Location 13</name>
+            <styleUrl>EagleEye</styleUrl>
+            <Point>
+                <coordinates>10.188867300273468,56.171560286024736</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>Location 14</name>
+            <styleUrl>EagleEye</styleUrl>
+            <Point>
+                <coordinates>10.189666726364266,56.171467878826</coordinates>
+            </Point>
+        </Placemark>
+    </Document>
+</kml>
