@@ -11,12 +11,11 @@ import android.util.Log;
 public class DistanceWithSpeedTrigger extends Trigger implements Runnable {
   private int maxSpeedInMetersPerSecond, thresholdInMeters;
   private Context context;
-  private Location lastLocation;
   private LocationManager locationManager;
   private long timeInMilliSeconds;
   private Thread thread;
   private boolean running = false;
-  private int tickCount, locationCount, acceptedLocationCount;
+  private int tickCount, acceptedLocationCount;
 
   public DistanceWithSpeedTrigger(int maxSpeedInMetersPerSecond, int thresholdInMeters, Context context) {
     this.maxSpeedInMetersPerSecond = maxSpeedInMetersPerSecond;
@@ -70,37 +69,18 @@ public class DistanceWithSpeedTrigger extends Trigger implements Runnable {
   }
 
   @Override
-  public void onLocationChanged(Location location) {
-    locationCount++;
-    Log.w("EagleEye", "Location: " + locationCount);
-
-    locationManager.removeUpdates(this);
-
-    float distance;
-
-    if(lastLocation == null){
-      lastLocation = location;
-      // Force first location to be regarded as past threshold so we get a first fix.
-      distance = thresholdInMeters;
-    }else{
-      distance = lastLocation.distanceTo(location);
-    }
-
-    locationUpdated(distance, location, lastLocation);
-  }
-
-  public void locationUpdated(float distanceInMeters, Location newLocation, Location lastLocation) {
+  protected void locationUpdated(float distanceInMeters, Location newLocation, Location lastLocation) {
     // Wrapper for easy testability
     // this should decide if our event should be fired and then call fireTriggers
 
     Log.w("EagleEye", "distanceInMeters: " + distanceInMeters + " locationCount: " + locationCount);
 
-    if(thresholdInMeters <= distanceInMeters) {
+    locationManager.removeUpdates(this);
+
+    if(thresholdInMeters <= distanceInMeters || lastLocation == null) {
       acceptedLocationCount++;
       Log.w("EagleEye", "Accepted location count: " + acceptedLocationCount);
       fireTriggers(newLocation);
-
-      this.lastLocation = newLocation;
 
       timeInMilliSeconds = (long) ((thresholdInMeters/maxSpeedInMetersPerSecond)*1000);
     } else {

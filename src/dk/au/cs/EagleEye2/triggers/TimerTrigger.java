@@ -14,7 +14,7 @@ public class TimerTrigger extends Trigger implements Runnable {
   private long timeInMilliSeconds;
   private Thread thread;
   private boolean running = false;
-  private int tickCount, locationCount;
+  private int tickCount;
 
   public TimerTrigger(int timeInSeconds, Context context) {
     this.context = context;
@@ -61,11 +61,8 @@ public class TimerTrigger extends Trigger implements Runnable {
   }
 
   @Override
-  public void onLocationChanged(Location location) {
-    locationCount++;
-    Log.w("EagleEye", "Location: " + locationCount);
-
+  protected void locationUpdated(float distanceInMeters, Location newLocation, Location lastLocation) {
     locationManager.removeUpdates(this);
-    this.fireTriggers(location);
+    this.fireTriggers(newLocation);
   }
 }

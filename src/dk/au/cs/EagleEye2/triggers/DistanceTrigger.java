@@ -9,7 +9,6 @@ import android.util.Log;
 
 public class DistanceTrigger extends Trigger implements LocationListener {
   // Contains the last location that we triggered on (ie. the one we want to know if we're 50 meters away from.)
-  private Location lastLocation;
   private int thresholdInMeters;
   private LocationManager locationManager;
   private Context context;
@@ -50,39 +49,6 @@ public class DistanceTrigger extends Trigger implements LocationListener {
       Log.w("EagleEye", "Locations: " + locationCount);
 
       fireTriggers(newLocation);
-
-      this.lastLocation = newLocation;
     }
-  }
-
-  @Override
-  public void onLocationChanged(Location location) {
-    tickCount++;
-    float distance;
-
-    if(lastLocation == null){
-      lastLocation = location;
-      // Force first location to be regarded as past threshold so we get a first fix.
-      distance = thresholdInMeters;
-    }else{
-      distance = lastLocation.distanceTo(location);
-    }
-
-    locationUpdated(distance, location, lastLocation);
-  }
-
-  @Override
-  public void onStatusChanged(String provider, int status, Bundle extras) {
-    // Don't think we need
-  }
-
-  @Override
-  public void onProviderEnabled(String provider) {
-    // Don't think we need
-  }
-
-  @Override
-  public void onProviderDisabled(String provider) {
-    // Don't think we need
   }
 }

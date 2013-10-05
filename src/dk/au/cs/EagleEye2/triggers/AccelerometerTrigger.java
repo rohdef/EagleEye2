@@ -16,7 +16,6 @@ public class AccelerometerTrigger extends Trigger implements SensorEventListener
   private SensorManager mSensorManager;
   private Sensor mAccelerometer;
   private LocationManager locationManager;
-  private Location lastLocation;
 
   private float lastX, lastY, lastZ, minThresholdMovement;
   private long lastTimestamp, timeThreshold;
@@ -109,50 +108,17 @@ public class AccelerometerTrigger extends Trigger implements SensorEventListener
     // Ignore
   }
 
-  @Override
-  public void onLocationChanged(Location location) {
-    // Would enable us to add checks on accuracy, to prevent inaccurate early fixes due to a long down time for the gps.
-
-    Log.w("EagleEye", "Location recieved");
-    if (!running) locationManager.removeUpdates(this);
-
-    float distance;
-
-    if(lastLocation == null){
-      lastLocation = location;
-      distance = thresholdInMeters;
-    }else{
-      distance = lastLocation.distanceTo(location);
-    }
-
-    locationUpdated(distance, location, lastLocation);
-  }
 
   public void locationUpdated(float distanceInMeters, Location newLocation, Location lastLocation) {
     // Wrapper for easy testability
     // this should decide if our event should be fired and then call fireTriggers
 
+    if (!running) locationManager.removeUpdates(this);
+
     Log.w("EagleEye", "distanceInMeters: " + distanceInMeters + ", newLocation: " + newLocation + ", lastLocation: " + lastLocation);
 
-    if(thresholdInMeters <= distanceInMeters){
+    if(thresholdInMeters <= distanceInMeters || lastLocation == null){
       fireTriggers(newLocation);
-
-      this.lastLocation = newLocation;
     }
-  }
-
-  @Override
-  public void onStatusChanged(String provider, int status, Bundle extras) {
-    // Ignore
-  }
-
-  @Override
-  public void onProviderEnabled(String provider) {
-    // Ignore
-  }
-
-  @Override
-  public void onProviderDisabled(String provider) {
-    // Ignore
   }
 }
