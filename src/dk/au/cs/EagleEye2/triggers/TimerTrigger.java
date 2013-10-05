@@ -8,7 +8,7 @@ import android.os.Bundle;
 import android.os.Looper;
 import android.util.Log;
 
-public class TimerTrigger extends Trigger implements LocationListener, Runnable {
+public class TimerTrigger extends Trigger implements Runnable {
   private Context context;
   private LocationManager locationManager;
   private long timeInMilliSeconds;
@@ -67,17 +67,5 @@ public class TimerTrigger extends Trigger implements LocationListener, Runnable 
 
     locationManager.removeUpdates(this);
     this.fireTriggers(location);
-  }
-
-  @Override
-  public void onStatusChanged(String provider, int status, Bundle extras) {
-  }
-
-  @Override
-  public void onProviderEnabled(String provider) {
-  }
-
-  @Override
-  public void onProviderDisabled(String provider) {
   }
 }

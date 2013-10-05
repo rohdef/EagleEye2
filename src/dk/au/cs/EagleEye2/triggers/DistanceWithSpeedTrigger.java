@@ -8,7 +8,7 @@ import android.os.Bundle;
 import android.os.Looper;
 import android.util.Log;
 
-public class DistanceWithSpeedTrigger extends Trigger implements LocationListener, Runnable {
+public class DistanceWithSpeedTrigger extends Trigger implements Runnable {
   private int maxSpeedInMetersPerSecond, thresholdInMeters;
   private Context context;
   private Location lastLocation;
@@ -22,16 +22,15 @@ public class DistanceWithSpeedTrigger extends Trigger implements LocationListene
     this.maxSpeedInMetersPerSecond = maxSpeedInMetersPerSecond;
     this.thresholdInMeters = thresholdInMeters;
     // Let's start with expected speed from the beginning
-    this.timeInMilliSeconds = (long) (thresholdInMeters/maxSpeedInMetersPerSecond)*1000;
-
     this.context = context;
     this.locationManager = (LocationManager) context.getSystemService(Context.LOCATION_SERVICE);
+    this.timeInMilliSeconds = (long) (thresholdInMeters/maxSpeedInMetersPerSecond)*1000;
   }
 
 
   @Override
   public void startRegistering() {
-    tickCount = locationCount = acceptedLocationCount = 0;
+    locationCount = tickCount = 0;
 
     thread = new Thread(this);
     thread.start();;
@@ -46,19 +45,19 @@ public class DistanceWithSpeedTrigger extends Trigger implements LocationListene
       try {
         Thread.sleep(timeInMilliSeconds);
       } catch (InterruptedException e) {
-        e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+        e.printStackTrace();
       }
     }
   }
 
   @Override
   public void stopRegistering() {
-    running = false;
-
     int tickLocationDifference = tickCount-locationCount;
     int acceptedLocationDifference = locationCount-acceptedLocationCount;
     Log.w("EagleEye", "Ticks:" + tickCount + ", locations:" + locationCount + ", acceptedLocationCount: " + acceptedLocationCount +
       ", ticks-locations:" + tickLocationDifference + ", locations-acceptedLocations: " + acceptedLocationDifference);
+
+    running = false;
   }
 
   public void timerTick() {
@@ -73,6 +72,8 @@ public class DistanceWithSpeedTrigger extends Trigger implements LocationListene
   @Override
   public void onLocationChanged(Location location) {
     locationCount++;
+    Log.w("EagleEye", "Location: " + locationCount);
+
     locationManager.removeUpdates(this);
 
     float distance;
@@ -100,31 +101,13 @@ public class DistanceWithSpeedTrigger extends Trigger implements LocationListene
       fireTriggers(newLocation);
 
       this.lastLocation = newLocation;
+
+      timeInMilliSeconds = (long) ((thresholdInMeters/maxSpeedInMetersPerSecond)*1000);
+    } else {
+      float distanceRemaining = thresholdInMeters-distanceInMeters;
+      timeInMilliSeconds = (long) ((distanceRemaining/maxSpeedInMetersPerSecond)*1000);
     }
 
-    float distanceRemaining = thresholdInMeters-distanceInMeters;
     locationManager.removeUpdates(this);
-    long sleepTime = (long) ((distanceRemaining/maxSpeedInMetersPerSecond)*1000);
-
-    try {
-      Thread.sleep(sleepTime);
-    } catch (InterruptedException e) {
-      e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
-    }
-  }
-
-  @Override
-  public void onStatusChanged(String provider, int status, Bundle extras) {
-    //To change body of implemented methods use File | Settings | File Templates.
-  }
-
-  @Override
-  public void onProviderEnabled(String provider) {
-    //To change body of implemented methods use File | Settings | File Templates.
-  }
-
-  @Override
-  public void onProviderDisabled(String provider) {
-    //To change body of implemented methods use File | Settings | File Templates.
   }
 }
