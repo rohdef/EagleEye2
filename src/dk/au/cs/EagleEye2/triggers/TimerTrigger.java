@@ -8,13 +8,13 @@ import android.os.Bundle;
 import android.os.Looper;
 import android.util.Log;
 
-public class TimerTrigger extends Trigger implements LocationListener, Runnable {
+public class TimerTrigger extends Trigger implements Runnable {
   private Context context;
   private LocationManager locationManager;
   private long timeInMilliSeconds;
   private Thread thread;
   private boolean running = false;
-  private int tickCount, locationCount;
+  private int tickCount;
 
   public TimerTrigger(int timeInSeconds, Context context) {
     this.context = context;
@@ -61,23 +61,9 @@ public class TimerTrigger extends Trigger implements LocationListener, Runnable 
   }
 
   @Override
-  public void onLocationChanged(Location location) {
-    locationCount++;
-    Log.w("EagleEye", "Location: " + locationCount);
-
+  protected boolean locationUpdated(float distanceInMeters, Location newLocation, Location lastLocation) {
     locationManager.removeUpdates(this);
-    this.fireTriggers(location);
-  }
-
-  @Override
-  public void onStatusChanged(String provider, int status, Bundle extras) {
-  }
-
-  @Override
-  public void onProviderEnabled(String provider) {
-  }
-
-  @Override
-  public void onProviderDisabled(String provider) {
+    this.fireTriggers(newLocation);
+    return true;
   }
 }

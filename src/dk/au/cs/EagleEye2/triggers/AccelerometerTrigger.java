@@ -11,21 +11,20 @@ import android.location.LocationManager;
 import android.os.Bundle;
 import android.util.Log;
 
-public class AccelerometerTrigger extends Trigger implements SensorEventListener, LocationListener {
+public class AccelerometerTrigger extends DistanceTrigger implements SensorEventListener {
   private Context context;
   private SensorManager mSensorManager;
   private Sensor mAccelerometer;
   private LocationManager locationManager;
-  private Location lastLocation;
 
-  private float lastX, lastY, lastZ, minThresholdMovement;
+  private float minThresholdMovement;
   private long lastTimestamp, timeThreshold;
   private boolean running = false;
-  private int thresholdInMeters;
   private int movementTicks, locationTicks, acceptedLocationTicks;
 
   public AccelerometerTrigger(float minThresholdMovement, int timeThreshold, int thresholdInMeters, Context context) {
-    this.thresholdInMeters = thresholdInMeters;
+    super(thresholdInMeters, context);
+
     this.minThresholdMovement = minThresholdMovement;
     this.context = context;
 
@@ -46,6 +45,7 @@ public class AccelerometerTrigger extends Trigger implements SensorEventListener
   public void stopRegistering() {
     int movementLocationDifference = movementTicks-locationTicks;
     int acceptedLocationDifference = locationTicks-acceptedLocationTicks;
+
     Log.w("EagleEye", "MovementTicks:" + movementTicks + ", locations:" + locationTicks + ", acceptedLocationCount: " + acceptedLocationTicks +
       ", movements-locations:" + movementLocationDifference + ", locations-acceptedLocations: " + acceptedLocationDifference);
 
@@ -76,10 +76,6 @@ public class AccelerometerTrigger extends Trigger implements SensorEventListener
     float y = values[1];
     float z = values[2];
 
-    float differenceX = x-lastX;
-    float differenceY = y-lastY;
-    float differenceZ = z-lastZ;
-
     float gravity = 9.81f;
     float movementChange = (float) Math.sqrt(x*x+y*y+z*z)-gravity;
     Log.w("EagleEye", "dMov" + movementChange);
@@ -98,10 +94,6 @@ public class AccelerometerTrigger extends Trigger implements SensorEventListener
       running = false;
       lastTimestamp = timestamp+timeThreshold;
     }
-
-    lastX = x;
-    lastY = y;
-    lastZ = z;
   }
 
   @Override
@@ -110,49 +102,9 @@ public class AccelerometerTrigger extends Trigger implements SensorEventListener
   }
 
   @Override
-  public void onLocationChanged(Location location) {
-    // Would enable us to add checks on accuracy, to prevent inaccurate early fixes due to a long down time for the gps.
-
-    Log.w("EagleEye", "Location recieved");
+  public boolean locationUpdated(float distanceInMeters, Location newLocation, Location lastLocation) {
     if (!running) locationManager.removeUpdates(this);
 
-    float distance;
-
-    if(lastLocation == null){
-      lastLocation = location;
-      distance = thresholdInMeters;
-    }else{
-      distance = lastLocation.distanceTo(location);
-    }
-
-    locationUpdated(distance, location, lastLocation);
-  }
-
-  public void locationUpdated(float distanceInMeters, Location newLocation, Location lastLocation) {
-    // Wrapper for easy testability
-    // this should decide if our event should be fired and then call fireTriggers
-
-    Log.w("EagleEye", "distanceInMeters: " + distanceInMeters + ", newLocation: " + newLocation + ", lastLocation: " + lastLocation);
-
-    if(thresholdInMeters <= distanceInMeters){
-      fireTriggers(newLocation);
-
-      this.lastLocation = newLocation;
-    }
-  }
-
-  @Override
-  public void onStatusChanged(String provider, int status, Bundle extras) {
-    // Ignore
-  }
-
-  @Override
-  public void onProviderEnabled(String provider) {
-    // Ignore
-  }
-
-  @Override
-  public void onProviderDisabled(String provider) {
-    // Ignore
+    return super.locationUpdated(distanceInMeters, newLocation, lastLocation);
   }
 }

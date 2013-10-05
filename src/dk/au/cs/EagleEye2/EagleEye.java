@@ -84,6 +84,7 @@ public class EagleEye extends Activity {
     }
 
     onStartBase();
+    Log.w("EagleEye", "Started");
   }
 
   private void onStartBase(){
