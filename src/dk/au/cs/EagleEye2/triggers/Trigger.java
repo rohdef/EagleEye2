@@ -38,7 +38,14 @@ public abstract class Trigger implements LocationListener {
     this.lastLocation = location;
   }
 
-  protected abstract void locationUpdated(float distanceInMeters, Location newLocation, Location lastLocation);
+  /**
+   * Wrapper for {@link #onLocationChanged(android.location.Location)} to enable testability.
+   * @param distanceInMeters calculated distance between {@link #lastLocation} and the new location
+   * @param newLocation
+   * @param lastLocation
+   * @return true if listeners is fired
+   */
+  protected abstract boolean locationUpdated(float distanceInMeters, Location newLocation, Location lastLocation);
 
   @Override
   public void onLocationChanged(Location location) {

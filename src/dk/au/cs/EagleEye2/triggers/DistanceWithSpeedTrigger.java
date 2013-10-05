@@ -2,24 +2,22 @@ package dk.au.cs.EagleEye2.triggers;
 
 import android.content.Context;
 import android.location.Location;
-import android.location.LocationListener;
 import android.location.LocationManager;
-import android.os.Bundle;
 import android.os.Looper;
 import android.util.Log;
 
-public class DistanceWithSpeedTrigger extends Trigger implements Runnable {
-  private int maxSpeedInMetersPerSecond, thresholdInMeters;
+public class DistanceWithSpeedTrigger extends DistanceTrigger implements Runnable {
   private Context context;
   private LocationManager locationManager;
   private long timeInMilliSeconds;
   private Thread thread;
   private boolean running = false;
-  private int tickCount, acceptedLocationCount;
+  private int tickCount, maxSpeedInMetersPerSecond;
 
   public DistanceWithSpeedTrigger(int maxSpeedInMetersPerSecond, int thresholdInMeters, Context context) {
+    super(thresholdInMeters, context);
+
     this.maxSpeedInMetersPerSecond = maxSpeedInMetersPerSecond;
-    this.thresholdInMeters = thresholdInMeters;
     // Let's start with expected speed from the beginning
     this.context = context;
     this.locationManager = (LocationManager) context.getSystemService(Context.LOCATION_SERVICE);
@@ -29,7 +27,7 @@ public class DistanceWithSpeedTrigger extends Trigger implements Runnable {
 
   @Override
   public void startRegistering() {
-    locationCount = tickCount = 0;
+    tickCount = 0;
 
     thread = new Thread(this);
     thread.start();;
@@ -51,9 +49,9 @@ public class DistanceWithSpeedTrigger extends Trigger implements Runnable {
 
   @Override
   public void stopRegistering() {
-    int tickLocationDifference = tickCount-locationCount;
-    int acceptedLocationDifference = locationCount-acceptedLocationCount;
-    Log.w("EagleEye", "Ticks:" + tickCount + ", locations:" + locationCount + ", acceptedLocationCount: " + acceptedLocationCount +
+    int tickLocationDifference = tickCount-getLocationsCount();
+    int acceptedLocationDifference = getLocationsCount()-getAcceptedLocationCount();
+    Log.w("EagleEye", "Ticks:" + tickCount + ", locations:" + getLocationsCount() + ", acceptedLocationCount: " + getAcceptedLocationCount() +
       ", ticks-locations:" + tickLocationDifference + ", locations-acceptedLocations: " + acceptedLocationDifference);
 
     running = false;
@@ -69,25 +67,16 @@ public class DistanceWithSpeedTrigger extends Trigger implements Runnable {
   }
 
   @Override
-  protected void locationUpdated(float distanceInMeters, Location newLocation, Location lastLocation) {
-    // Wrapper for easy testability
-    // this should decide if our event should be fired and then call fireTriggers
-
-    Log.w("EagleEye", "distanceInMeters: " + distanceInMeters + " locationCount: " + locationCount);
-
+  protected boolean locationUpdated(float distanceInMeters, Location newLocation, Location lastLocation) {
     locationManager.removeUpdates(this);
 
-    if(thresholdInMeters <= distanceInMeters || lastLocation == null) {
-      acceptedLocationCount++;
-      Log.w("EagleEye", "Accepted location count: " + acceptedLocationCount);
-      fireTriggers(newLocation);
-
-      timeInMilliSeconds = (long) ((thresholdInMeters/maxSpeedInMetersPerSecond)*1000);
+    if(super.locationUpdated(distanceInMeters, newLocation, lastLocation)) {
+      timeInMilliSeconds = (long) ((getThresholdInMeters()/maxSpeedInMetersPerSecond)*1000);
+      return true;
     } else {
-      float distanceRemaining = thresholdInMeters-distanceInMeters;
+      float distanceRemaining = getThresholdInMeters()-distanceInMeters;
       timeInMilliSeconds = (long) ((distanceRemaining/maxSpeedInMetersPerSecond)*1000);
+      return false;
     }
-
-    locationManager.removeUpdates(this);
   }
 }

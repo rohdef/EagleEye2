@@ -61,8 +61,9 @@ public class TimerTrigger extends Trigger implements Runnable {
   }
 
   @Override
-  protected void locationUpdated(float distanceInMeters, Location newLocation, Location lastLocation) {
+  protected boolean locationUpdated(float distanceInMeters, Location newLocation, Location lastLocation) {
     locationManager.removeUpdates(this);
     this.fireTriggers(newLocation);
+    return true;
   }
 }

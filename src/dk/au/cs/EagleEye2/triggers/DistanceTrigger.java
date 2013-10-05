@@ -4,7 +4,6 @@ import android.content.Context;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
-import android.os.Bundle;
 import android.util.Log;
 
 public class DistanceTrigger extends Trigger implements LocationListener {
@@ -12,7 +11,7 @@ public class DistanceTrigger extends Trigger implements LocationListener {
   private int thresholdInMeters;
   private LocationManager locationManager;
   private Context context;
-  private int tickCount, locationCount;
+  private int locationsCount, acceptedLocationCount;
 
   public DistanceTrigger(int thresholdInMeters, Context context) {
     this.thresholdInMeters = thresholdInMeters;
@@ -21,34 +20,49 @@ public class DistanceTrigger extends Trigger implements LocationListener {
     locationManager = (LocationManager) context.getSystemService(Context.LOCATION_SERVICE);
   }
 
+  public int getLocationsCount() {
+    return locationsCount;
+  }
+
+  public int getAcceptedLocationCount() {
+    return acceptedLocationCount;
+  }
+
+  public int getThresholdInMeters() {
+    return thresholdInMeters;
+  }
+
   @Override
   public void startRegistering() {
     // From the slides
     // http://developer.android.com/reference/android/location/LocationManager.html#requestLocationUpdates(java.lang.String, long, float, android.location.LocationListener)
     //
-    tickCount = 0;
-    locationCount = 0;
+    locationsCount = 0;
+    acceptedLocationCount = 0;
 
     locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, this);
   }
 
   @Override
   public void stopRegistering() {
-    Log.w("EagleEye", "Ticks: " + tickCount + " locations: " + locationCount + " difference: " + (tickCount-locationCount));
+    Log.w("EagleEye", "Ticks: " + locationsCount + " locations: " + acceptedLocationCount + " difference: " + (locationsCount - acceptedLocationCount));
     locationManager.removeUpdates(this);
   }
 
-  public void locationUpdated(float distanceInMeters, Location newLocation, Location lastLocation) {
-    // Wrapper for easy testability
-    // this should decide if our event should be fired and then call fireTriggers
+  @Override
+  protected boolean locationUpdated(float distanceInMeters, Location newLocation, Location lastLocation) {
+    locationsCount++;
 
-    Log.w("EagleEye", "distanceInMeters: " + distanceInMeters + " ticks: " + tickCount);
+    Log.w("EagleEye", "distanceInMeters: " + distanceInMeters + " ticks: " + locationsCount);
 
-    if(thresholdInMeters <= distanceInMeters){
-      locationCount++;
-      Log.w("EagleEye", "Locations: " + locationCount);
+    if(thresholdInMeters <= distanceInMeters || lastLocation == null){
+      acceptedLocationCount++;
+      Log.w("EagleEye", "Locations: " + acceptedLocationCount);
 
       fireTriggers(newLocation);
+      return true;
+    } else {
+      return false;
     }
   }
 }
