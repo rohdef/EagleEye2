@@ -7,7 +7,6 @@ import android.os.Looper;
 import android.util.Log;
 
 public class DistanceWithSpeedTrigger extends DistanceTrigger implements Runnable {
-  private Context context;
   private LocationManager locationManager;
   private long timeInMilliSeconds;
   private Thread thread;
@@ -17,20 +16,17 @@ public class DistanceWithSpeedTrigger extends DistanceTrigger implements Runnabl
   public DistanceWithSpeedTrigger(int maxSpeedInMetersPerSecond, int thresholdInMeters, Context context) {
     super(thresholdInMeters, context);
 
-    this.maxSpeedInMetersPerSecond = maxSpeedInMetersPerSecond;
-    // Let's start with expected speed from the beginning
-    this.context = context;
+    this.maxSpeedInMetersPerSecond = maxSpeedInMetersPerSecond; // Let's start with expected speed from the beginning
     this.locationManager = (LocationManager) context.getSystemService(Context.LOCATION_SERVICE);
     this.timeInMilliSeconds = (long) (thresholdInMeters/maxSpeedInMetersPerSecond)*1000;
   }
-
 
   @Override
   public void startRegistering() {
     tickCount = 0;
 
     thread = new Thread(this);
-    thread.start();;
+    thread.start();
   }
 
   @Override
@@ -51,6 +47,7 @@ public class DistanceWithSpeedTrigger extends DistanceTrigger implements Runnabl
   public void stopRegistering() {
     int tickLocationDifference = tickCount-getLocationsCount();
     int acceptedLocationDifference = getLocationsCount()-getAcceptedLocationCount();
+
     Log.w("EagleEye", "Ticks:" + tickCount + ", locations:" + getLocationsCount() + ", acceptedLocationCount: " + getAcceptedLocationCount() +
       ", ticks-locations:" + tickLocationDifference + ", locations-acceptedLocations: " + acceptedLocationDifference);
 
@@ -67,10 +64,10 @@ public class DistanceWithSpeedTrigger extends DistanceTrigger implements Runnabl
   }
 
   @Override
-  protected boolean locationUpdated(float distanceInMeters, Location newLocation, Location lastLocation) {
+  protected boolean locationUpdated(float distanceInMeters, Location newLocation) {
     locationManager.removeUpdates(this);
 
-    if(super.locationUpdated(distanceInMeters, newLocation, lastLocation)) {
+    if(super.locationUpdated(distanceInMeters, newLocation)) {
       timeInMilliSeconds = (long) ((getThresholdInMeters()/maxSpeedInMetersPerSecond)*1000);
       return true;
     } else {

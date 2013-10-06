@@ -6,6 +6,7 @@ import android.test.AndroidTestCase;
 public class AccelerometerTriggerTest extends AndroidTestCase {
   private AccelerometerTrigger accelerometerTrigger;
   private TestTriggerListener accelerometerTriggerListener;
+  private float gravity = 9.81f;
 
   public AccelerometerTriggerTest() {
 
@@ -24,27 +25,24 @@ public class AccelerometerTriggerTest extends AndroidTestCase {
    * Should activate
    */
   public void testShouldActivateOnMovementOnXAxis() {
-    float[] accelerometerValues = {0.1f, 0, 0};
+    float[] accelerometerValues = {0.1f + gravity, 0, 0};
     accelerometerTrigger.onSensorChanged(null, 0, 0, accelerometerValues);
 
-    assertEquals(1, accelerometerTriggerListener.getCallCount());
-    assertNotNull(accelerometerTriggerListener.getLastGeoPosition());
+    assertEquals(true, accelerometerTrigger.isRunning());
   }
 
   public void testShouldActivateOnMovementOnYAxis() {
-    float[] accelerometerValues = {0, 0.1f, 0};
+    float[] accelerometerValues = {0, 0.1f + gravity, 0};
     accelerometerTrigger.onSensorChanged(null, 0, 0, accelerometerValues);
 
-    assertEquals(1, accelerometerTriggerListener.getCallCount());
-    assertNotNull(accelerometerTriggerListener.getLastGeoPosition());
+    assertEquals(true, accelerometerTrigger.isRunning());
   }
 
   public void testShouldActivateOnMovementOnZAxis() {
-    float[] accelerometerValues = {0, 0, 0.1f};
+    float[] accelerometerValues = {0, 0, 0.1f + gravity};
     accelerometerTrigger.onSensorChanged(null, 0, 0, accelerometerValues);
 
-    assertEquals(1, accelerometerTriggerListener.getCallCount());
-    assertNotNull(accelerometerTriggerListener.getLastGeoPosition());
+    assertEquals(true, accelerometerTrigger.isRunning());
   }
 
   /*
@@ -55,24 +53,21 @@ public class AccelerometerTriggerTest extends AndroidTestCase {
     float[] accelerometerValues = {0.09f, 0, 0};
     accelerometerTrigger.onSensorChanged(null, 0, 0, accelerometerValues);
 
-    assertEquals(0, accelerometerTriggerListener.getCallCount());
-    assertNull(accelerometerTriggerListener.getLastGeoPosition());
+    assertEquals(false, accelerometerTrigger.isRunning());
   }
 
   public void testShouldNotActivateOnSmallMovementOnYAxis() {
     float[] accelerometerValues = {0, 0.09f, 0};
     accelerometerTrigger.onSensorChanged(null, 0, 0, accelerometerValues);
 
-    assertEquals(0, accelerometerTriggerListener.getCallCount());
-    assertNull(accelerometerTriggerListener.getLastGeoPosition());
+    assertEquals(false, accelerometerTrigger.isRunning());
   }
 
   public void testShouldNotActivateOnSmallMovementOnZAxis() {
     float[] accelerometerValues = {0, 0, 0.09f};
     accelerometerTrigger.onSensorChanged(null, 0, 0, accelerometerValues);
 
-    assertEquals(0, accelerometerTriggerListener.getCallCount());
-    assertNull(accelerometerTriggerListener.getLastGeoPosition());
+    assertEquals(false, accelerometerTrigger.isRunning());
   }
 
   /*
@@ -83,7 +78,6 @@ public class AccelerometerTriggerTest extends AndroidTestCase {
     float[] accelerometerValues = {0, 0, 0};
     accelerometerTrigger.onSensorChanged(null, 0, 0, accelerometerValues);
 
-    assertEquals(0, accelerometerTriggerListener.getCallCount());
-    assertNull(accelerometerTriggerListener.getLastGeoPosition());
+    assertEquals(false, accelerometerTrigger.isRunning());
   }
 }

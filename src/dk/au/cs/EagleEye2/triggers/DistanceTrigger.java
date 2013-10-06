@@ -34,9 +34,6 @@ public class DistanceTrigger extends Trigger implements LocationListener {
 
   @Override
   public void startRegistering() {
-    // From the slides
-    // http://developer.android.com/reference/android/location/LocationManager.html#requestLocationUpdates(java.lang.String, long, float, android.location.LocationListener)
-    //
     locationsCount = 0;
     acceptedLocationCount = 0;
 
@@ -50,7 +47,7 @@ public class DistanceTrigger extends Trigger implements LocationListener {
   }
 
   @Override
-  protected boolean locationUpdated(float distanceInMeters, Location newLocation, Location lastLocation) {
+  protected boolean locationUpdated(float distanceInMeters, Location newLocation) {
     locationsCount++;
 
     Log.w("EagleEye", "distanceInMeters: " + distanceInMeters + " ticks: " + locationsCount);
@@ -60,6 +57,7 @@ public class DistanceTrigger extends Trigger implements LocationListener {
       Log.w("EagleEye", "Locations: " + acceptedLocationCount);
 
       fireTriggers(newLocation);
+
       return true;
     } else {
       return false;

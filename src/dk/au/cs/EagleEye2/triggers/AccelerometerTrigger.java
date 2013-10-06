@@ -22,6 +22,10 @@ public class AccelerometerTrigger extends DistanceTrigger implements SensorEvent
   private boolean running = false;
   private int movementTicks, locationTicks, acceptedLocationTicks;
 
+  public boolean isRunning(){
+    return running;
+  }
+
   public AccelerometerTrigger(float minThresholdMovement, int timeThreshold, int thresholdInMeters, Context context) {
     super(thresholdInMeters, context);
 
@@ -80,31 +84,25 @@ public class AccelerometerTrigger extends DistanceTrigger implements SensorEvent
     float movementChange = (float) Math.sqrt(x*x+y*y+z*z)-gravity;
     Log.w("EagleEye", "dMov" + movementChange);
 
-
     if (minThresholdMovement <= movementChange) {
       Log.w("EagleEye", "Movent accepted at " + x + " " + y + " " + z);
       lastTimestamp = timestamp+timeThreshold;
 
-      if (!running)
+      if (!running){
         locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, this);
+      }
 
       running = true;
     } else if (running) {
       Log.w("EagleEye", "Stop running");
       running = false;
       lastTimestamp = timestamp+timeThreshold;
+      locationManager.removeUpdates(this);
     }
   }
 
   @Override
   public void onAccuracyChanged(Sensor sensor, int i) {
     // Ignore
-  }
-
-  @Override
-  public boolean locationUpdated(float distanceInMeters, Location newLocation, Location lastLocation) {
-    if (!running) locationManager.removeUpdates(this);
-
-    return super.locationUpdated(distanceInMeters, newLocation, lastLocation);
   }
 }

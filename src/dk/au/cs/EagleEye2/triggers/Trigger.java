@@ -14,7 +14,7 @@ import java.util.ArrayList;
 public abstract class Trigger implements LocationListener {
   private ArrayList<ITriggerListener> listeners = new ArrayList<ITriggerListener>();
   protected int locationCount;
-  private Location lastLocation;
+  protected Location lastLocation;
 
   public abstract void startRegistering();
   public abstract void stopRegistering();
@@ -26,26 +26,30 @@ public abstract class Trigger implements LocationListener {
     listeners.remove(listener);
   }
 
-  public void fireTriggers(Location location) {
+  public void fireTriggers(Location newLocation) {
     for (ITriggerListener listener : listeners) {
-      listener.fireTrigger(location);
+      listener.fireTrigger(newLocation);
     }
 
-    lastLocation = location;
+    // Remember this new location as the last location
+    lastLocation = newLocation;
   }
 
   protected void setLastLocation(Location location) {
     this.lastLocation = location;
   }
 
+  public Location getLastLocation() {
+    return this.lastLocation;
+  }
+
   /**
    * Wrapper for {@link #onLocationChanged(android.location.Location)} to enable testability.
    * @param distanceInMeters calculated distance between {@link #lastLocation} and the new location
    * @param newLocation
-   * @param lastLocation
    * @return true if listeners is fired
    */
-  protected abstract boolean locationUpdated(float distanceInMeters, Location newLocation, Location lastLocation);
+  protected abstract boolean locationUpdated(float distanceInMeters, Location newLocation);
 
   @Override
   public void onLocationChanged(Location location) {
@@ -56,13 +60,12 @@ public abstract class Trigger implements LocationListener {
 
     if(lastLocation == null){
       lastLocation = location;
-      // Force first location to be regarded as past threshold so we get a first fix.
       distance = 0;
     }else{
       distance = lastLocation.distanceTo(location);
     }
 
-    locationUpdated(distance, location, lastLocation);
+    locationUpdated(distance, location);
   }
 
   @Override

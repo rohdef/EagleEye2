@@ -18,8 +18,7 @@ public class TimeTriggerTest extends AndroidTestCase {
   protected void setUp() throws Exception {
     super.setUp();
 
-
-    timerTrigger = new TimerTrigger(this.getContext());
+    timerTrigger = new TimerTrigger(1, this.getContext());
     timerTriggerListener = new TestTriggerListener();
     timerTrigger.addListener(timerTriggerListener);
   }

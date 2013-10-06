@@ -27,7 +27,7 @@ public class TimerTrigger extends Trigger implements Runnable {
     locationCount = tickCount = 0;
 
     thread = new Thread(this);
-    thread.start();;
+    thread.start();
   }
 
   @Override
@@ -39,7 +39,7 @@ public class TimerTrigger extends Trigger implements Runnable {
       try {
         Thread.sleep(timeInMilliSeconds);
       } catch (InterruptedException e) {
-        e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+        e.printStackTrace();
       }
     }
   }
@@ -55,15 +55,18 @@ public class TimerTrigger extends Trigger implements Runnable {
   public void timerTick() {
     tickCount++;
     Log.w("EagleEye", "Tick: " + tickCount);
-    // http://stackoverflow.com/questions/7979230/how-to-read-location-only-once-with-locationmanager-gps-and-network-provider-a
 
     locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, this, Looper.getMainLooper());
   }
 
   @Override
-  protected boolean locationUpdated(float distanceInMeters, Location newLocation, Location lastLocation) {
+  protected boolean locationUpdated(float distanceInMeters, Location newLocation) {
+    // Stop requesting updates - Just want one update per tick (Source: http://stackoverflow.com/questions/7979230/how-to-read-location-only-once-with-locationmanager-gps-and-network-provider-a)
     locationManager.removeUpdates(this);
+
+    // Fire trigger listeners
     this.fireTriggers(newLocation);
+
     return true;
   }
 }
