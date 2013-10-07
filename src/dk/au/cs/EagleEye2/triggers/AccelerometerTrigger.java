@@ -6,9 +6,7 @@ import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.location.Location;
-import android.location.LocationListener;
 import android.location.LocationManager;
-import android.os.Bundle;
 import android.util.Log;
 
 public class AccelerometerTrigger extends DistanceTrigger implements SensorEventListener {
@@ -20,7 +18,7 @@ public class AccelerometerTrigger extends DistanceTrigger implements SensorEvent
   private float minThresholdMovement;
   private long lastTimestamp, timeThreshold;
   private boolean running = false;
-  private int movementTicks, locationTicks, acceptedLocationTicks;
+  private int movementTicks;
 
   public boolean isRunning(){
     return running;
@@ -38,23 +36,27 @@ public class AccelerometerTrigger extends DistanceTrigger implements SensorEvent
   }
 
   public void startRegistering() {
-    movementTicks = locationTicks = acceptedLocationTicks = 0;
+    movementTicks = 0;
 
     mSensorManager = (SensorManager) context.getSystemService(Context.SENSOR_SERVICE);
     mAccelerometer = mSensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
     mSensorManager.registerListener(this, mAccelerometer, SensorManager.SENSOR_DELAY_NORMAL);
+
+    locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, this);
+
     running = false;
   }
 
   public void stopRegistering() {
-    int movementLocationDifference = movementTicks-locationTicks;
-    int acceptedLocationDifference = locationTicks-acceptedLocationTicks;
+    int movementLocationDifference = movementTicks-getLocationsCount();
+    int acceptedLocationDifference = getLocationsCount()-getAcceptedLocationCount();
 
-    Log.w("EagleEye", "MovementTicks:" + movementTicks + ", locations:" + locationTicks + ", acceptedLocationCount: " + acceptedLocationTicks +
-      ", movements-locations:" + movementLocationDifference + ", locations-acceptedLocations: " + acceptedLocationDifference);
+    Log.w("EagleEye", "MovementTicks:" + movementTicks + ", locations:" + getLocationsCount() +
+      ", acceptedLocationCount: " + getAcceptedLocationCount() +
+      ", movements-locations:" + movementLocationDifference +
+      ", locations-acceptedLocations: " + acceptedLocationDifference);
 
     mSensorManager.unregisterListener(this);
-    locationManager.removeUpdates(this);
     running = false;
   }
 
@@ -62,7 +64,7 @@ public class AccelerometerTrigger extends DistanceTrigger implements SensorEvent
    * Due to the interface not being public, this method should never contain
    * any implementation, since testing will be impossible. In stead use the
    * override onSensorChanged(Sensor sensor, int accuracy, long timestamp, float[] values)
-   * @param sensorEvent
+   * @param sensorEvent sensor data
    */
   @Override
   public void onSensorChanged(SensorEvent sensorEvent) {
@@ -82,9 +84,9 @@ public class AccelerometerTrigger extends DistanceTrigger implements SensorEvent
 
     float gravity = 9.81f;
     float movementChange = (float) Math.sqrt(x*x+y*y+z*z)-gravity;
-    Log.w("EagleEye", "dMov" + movementChange);
 
     if (minThresholdMovement <= movementChange) {
+      movementTicks++;
       Log.w("EagleEye", "Movent accepted at " + x + " " + y + " " + z);
       lastTimestamp = timestamp+timeThreshold;
 
@@ -97,8 +99,16 @@ public class AccelerometerTrigger extends DistanceTrigger implements SensorEvent
       Log.w("EagleEye", "Stop running");
       running = false;
       lastTimestamp = timestamp+timeThreshold;
+    }
+  }
+
+  @Override
+  protected boolean locationUpdated(float distanceInMeters, Location newLocation) {
+    if (!running) {
       locationManager.removeUpdates(this);
     }
+
+    return super.locationUpdated(distanceInMeters, newLocation);
   }
 
   @Override
