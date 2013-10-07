@@ -1,0 +1,269 @@
+10-07 15:26:06.170: W/EagleEye(12204): Start running
+10-07 15:26:06.170: W/EagleEye(12204): [Start] Distance-Based Reporting Strategy - Maximum Speed (Forward) (Distance: 50, Max speed: 2)
+10-07 15:26:06.170: W/EagleEye(12204): Started
+10-07 15:26:06.170: W/EagleEye(12204): Tick: 1
+10-07 15:26:11.400: W/EagleEye(12204): Location: 1
+10-07 15:26:11.410: W/EagleEye(12204): distanceInMeters: 0.0 ticks: 1
+10-07 15:26:11.410: W/EagleEye(12204): null
+10-07 15:26:11.410: W/EagleEye(12204): Locations: 1
+10-07 15:26:11.440: W/EagleEye(12204): Sending data to server
+10-07 15:26:36.460: W/EagleEye(12204): Tick: 2
+10-07 15:26:42.705: W/EagleEye(12204): Location: 2
+10-07 15:26:42.755: W/EagleEye(12204): distanceInMeters: 50.69189 ticks: 2
+10-07 15:26:42.755: W/EagleEye(12204): Location[gps 56.171438,10.190408 acc=32 et=+4h29m10s768ms alt=146.2465809683015 vel=0.0 {Bundle[mParcelledData.dataSize=44]}]
+10-07 15:26:42.755: W/EagleEye(12204): Locations: 2
+10-07 15:26:42.785: W/EagleEye(12204): Sending data to server
+10-07 15:27:07.810: W/EagleEye(12204): Tick: 3
+10-07 15:27:12.375: W/EagleEye(12204): Location: 3
+10-07 15:27:12.570: W/EagleEye(12204): distanceInMeters: 45.854996 ticks: 3
+10-07 15:27:12.570: W/EagleEye(12204): Location[gps 56.170989,10.190266 acc=32 et=+4h29m42s58ms alt=109.80744176504224 vel=0.0 {Bundle[mParcelledData.dataSize=44]}]
+10-07 15:27:14.645: W/EagleEye(12204): Tick: 4
+10-07 15:27:15.200: W/EagleEye(12204): Location: 4
+10-07 15:27:15.215: W/EagleEye(12204): distanceInMeters: 58.97328 ticks: 4
+10-07 15:27:15.220: W/EagleEye(12204): Location[gps 56.170989,10.190266 acc=32 et=+4h29m42s58ms alt=109.80744176504224 vel=0.0 {Bundle[mParcelledData.dataSize=44]}]
+10-07 15:27:15.220: W/EagleEye(12204): Locations: 3
+10-07 15:27:15.280: W/EagleEye(12204): Sending data to server
+10-07 15:27:40.285: W/EagleEye(12204): Tick: 5
+10-07 15:27:45.630: W/EagleEye(12204): Location: 5
+10-07 15:27:45.635: W/EagleEye(12204): distanceInMeters: 55.64255 ticks: 5
+10-07 15:27:45.635: W/EagleEye(12204): Location[gps 56.170495,10.189924 acc=12 et=+4h30m14s467ms alt=95.98589948457071 vel=0.0 {Bundle[mParcelledData.dataSize=44]}]
+10-07 15:27:45.635: W/EagleEye(12204): Locations: 4
+10-07 15:27:45.670: W/EagleEye(12204): Sending data to server
+10-07 15:28:10.700: W/EagleEye(12204): Tick: 6
+10-07 15:28:16.020: W/EagleEye(12204): Location: 6
+10-07 15:28:16.035: W/EagleEye(12204): distanceInMeters: 44.943417 ticks: 6
+10-07 15:28:16.035: W/EagleEye(12204): Location[gps 56.170009,10.190129 acc=32 et=+4h30m44s950ms alt=114.00741168352377 vel=0.0 {Bundle[mParcelledData.dataSize=44]}]
+10-07 15:28:18.570: W/EagleEye(12204): Tick: 7
+10-07 15:28:19.070: W/EagleEye(12204): Location: 7
+10-07 15:28:19.100: W/EagleEye(12204): distanceInMeters: 44.943417 ticks: 7
+10-07 15:28:19.110: W/EagleEye(12204): Location[gps 56.170009,10.190129 acc=32 et=+4h30m44s950ms alt=114.00741168352377 vel=0.0 {Bundle[mParcelledData.dataSize=44]}]
+10-07 15:28:21.640: W/EagleEye(12204): Tick: 8
+10-07 15:28:22.085: W/EagleEye(12204): Location: 8
+10-07 15:28:22.105: W/EagleEye(12204): distanceInMeters: 44.943417 ticks: 8
+10-07 15:28:22.105: W/EagleEye(12204): Location[gps 56.170009,10.190129 acc=32 et=+4h30m44s950ms alt=114.00741168352377 vel=0.0 {Bundle[mParcelledData.dataSize=44]}]
+10-07 15:28:24.640: W/EagleEye(12204): Tick: 9
+10-07 15:28:25.210: W/EagleEye(12204): Location: 9
+10-07 15:28:25.255: W/EagleEye(12204): distanceInMeters: 55.64524 ticks: 9
+10-07 15:28:25.255: W/EagleEye(12204): Location[gps 56.170009,10.190129 acc=32 et=+4h30m44s950ms alt=114.00741168352377 vel=0.0 {Bundle[mParcelledData.dataSize=44]}]
+10-07 15:28:25.255: W/EagleEye(12204): Locations: 5
+10-07 15:28:25.315: W/EagleEye(12204): Sending data to server
+10-07 15:28:50.320: W/EagleEye(12204): Tick: 10
+10-07 15:28:56.635: W/EagleEye(12204): Location: 10
+10-07 15:28:56.680: W/EagleEye(12204): distanceInMeters: 49.278923 ticks: 10
+10-07 15:28:56.680: W/EagleEye(12204): Location[gps 56.169645,10.189514 acc=12 et=+4h31m24s187ms alt=115.14191086287732 vel=0.0 {Bundle[mParcelledData.dataSize=44]}]
+10-07 15:28:57.045: W/EagleEye(12204): Tick: 11
+10-07 15:28:57.645: W/EagleEye(12204): Location: 11
+10-07 15:28:57.680: W/EagleEye(12204): distanceInMeters: 49.278923 ticks: 11
+10-07 15:28:57.680: W/EagleEye(12204): Location[gps 56.169645,10.189514 acc=12 et=+4h31m24s187ms alt=115.14191086287732 vel=0.0 {Bundle[mParcelledData.dataSize=44]}]
+10-07 15:28:58.045: W/EagleEye(12204): Tick: 12
+10-07 15:28:58.685: W/EagleEye(12204): Location: 12
+10-07 15:28:58.700: W/EagleEye(12204): distanceInMeters: 49.278923 ticks: 12
+10-07 15:28:58.700: W/EagleEye(12204): Location[gps 56.169645,10.189514 acc=12 et=+4h31m24s187ms alt=115.14191086287732 vel=0.0 {Bundle[mParcelledData.dataSize=44]}]
+10-07 15:28:59.060: W/EagleEye(12204): Tick: 13
+10-07 15:28:59.865: W/EagleEye(12204): Location: 13
+10-07 15:28:59.890: W/EagleEye(12204): distanceInMeters: 49.278923 ticks: 13
+10-07 15:28:59.890: W/EagleEye(12204): Location[gps 56.169645,10.189514 acc=12 et=+4h31m24s187ms alt=115.14191086287732 vel=0.0 {Bundle[mParcelledData.dataSize=44]}]
+10-07 15:29:00.255: W/EagleEye(12204): Tick: 14
+10-07 15:29:00.845: W/EagleEye(12204): Location: 14
+10-07 15:29:00.910: W/EagleEye(12204): distanceInMeters: 49.278923 ticks: 14
+10-07 15:29:00.910: W/EagleEye(12204): Location[gps 56.169645,10.189514 acc=12 et=+4h31m24s187ms alt=115.14191086287732 vel=0.0 {Bundle[mParcelledData.dataSize=44]}]
+10-07 15:29:01.275: W/EagleEye(12204): Tick: 15
+10-07 15:29:01.855: W/EagleEye(12204): Location: 15
+10-07 15:29:01.885: W/EagleEye(12204): distanceInMeters: 49.278923 ticks: 15
+10-07 15:29:01.885: W/EagleEye(12204): Location[gps 56.169645,10.189514 acc=12 et=+4h31m24s187ms alt=115.14191086287732 vel=0.0 {Bundle[mParcelledData.dataSize=44]}]
+10-07 15:29:02.250: W/EagleEye(12204): Tick: 16
+10-07 15:29:02.865: W/EagleEye(12204): Location: 16
+10-07 15:29:02.905: W/EagleEye(12204): distanceInMeters: 49.278923 ticks: 16
+10-07 15:29:02.905: W/EagleEye(12204): Location[gps 56.169645,10.189514 acc=12 et=+4h31m24s187ms alt=115.14191086287732 vel=0.0 {Bundle[mParcelledData.dataSize=44]}]
+10-07 15:29:03.275: W/EagleEye(12204): Tick: 17
+10-07 15:29:03.900: W/EagleEye(12204): Location: 17
+10-07 15:29:03.930: W/EagleEye(12204): distanceInMeters: 49.278923 ticks: 17
+10-07 15:29:03.930: W/EagleEye(12204): Location[gps 56.169645,10.189514 acc=12 et=+4h31m24s187ms alt=115.14191086287732 vel=0.0 {Bundle[mParcelledData.dataSize=44]}]
+10-07 15:29:04.295: W/EagleEye(12204): Tick: 18
+10-07 15:29:04.930: W/EagleEye(12204): Location: 18
+10-07 15:29:04.945: W/EagleEye(12204): distanceInMeters: 49.278923 ticks: 18
+10-07 15:29:04.945: W/EagleEye(12204): Location[gps 56.169645,10.189514 acc=12 et=+4h31m24s187ms alt=115.14191086287732 vel=0.0 {Bundle[mParcelledData.dataSize=44]}]
+10-07 15:29:05.310: W/EagleEye(12204): Tick: 19
+10-07 15:29:05.875: W/EagleEye(12204): Location: 19
+10-07 15:29:05.935: W/EagleEye(12204): distanceInMeters: 49.278923 ticks: 19
+10-07 15:29:05.935: W/EagleEye(12204): Location[gps 56.169645,10.189514 acc=12 et=+4h31m24s187ms alt=115.14191086287732 vel=0.0 {Bundle[mParcelledData.dataSize=44]}]
+10-07 15:29:06.300: W/EagleEye(12204): Tick: 20
+10-07 15:29:06.965: W/EagleEye(12204): Location: 20
+10-07 15:29:06.995: W/EagleEye(12204): distanceInMeters: 57.054493 ticks: 20
+10-07 15:29:06.995: W/EagleEye(12204): Location[gps 56.169645,10.189514 acc=12 et=+4h31m24s187ms alt=115.14191086287732 vel=0.0 {Bundle[mParcelledData.dataSize=44]}]
+10-07 15:29:06.995: W/EagleEye(12204): Locations: 6
+10-07 15:29:07.050: W/EagleEye(12204): Sending data to server
+10-07 15:29:32.055: W/EagleEye(12204): Tick: 21
+10-07 15:29:37.385: W/EagleEye(12204): Location: 21
+10-07 15:29:37.400: W/EagleEye(12204): distanceInMeters: 18.468416 ticks: 21
+10-07 15:29:37.400: W/EagleEye(12204): Location[gps 56.169154,10.189252 acc=12 et=+4h32m6s204ms alt=102.33260401450451 vel=0.0 {Bundle[mParcelledData.dataSize=44]}]
+10-07 15:29:53.165: W/EagleEye(12204): Tick: 22
+10-07 15:30:00.465: W/EagleEye(12204): Location: 22
+10-07 15:30:00.510: W/EagleEye(12204): distanceInMeters: 70.7933 ticks: 22
+10-07 15:30:00.510: W/EagleEye(12204): Location[gps 56.169154,10.189252 acc=12 et=+4h32m6s204ms alt=102.33260401450451 vel=0.0 {Bundle[mParcelledData.dataSize=44]}]
+10-07 15:30:00.510: W/EagleEye(12204): Locations: 7
+10-07 15:30:00.560: W/EagleEye(12204): Sending data to server
+10-07 15:30:25.565: W/EagleEye(12204): Tick: 23
+10-07 15:30:32.880: W/EagleEye(12204): Location: 23
+10-07 15:30:32.900: W/EagleEye(12204): distanceInMeters: 43.491413 ticks: 23
+10-07 15:30:32.900: W/EagleEye(12204): Location[gps 56.169655,10.188551 acc=48 et=+4h32m59s817ms alt=69.48748847675989 vel=0.0 {Bundle[mParcelledData.dataSize=44]}]
+10-07 15:30:36.155: W/EagleEye(12204): Tick: 24
+10-07 15:30:36.865: W/EagleEye(12204): Location: 24
+10-07 15:30:36.885: W/EagleEye(12204): distanceInMeters: 43.491413 ticks: 24
+10-07 15:30:36.885: W/EagleEye(12204): Location[gps 56.169655,10.188551 acc=48 et=+4h32m59s817ms alt=69.48748847675989 vel=0.0 {Bundle[mParcelledData.dataSize=44]}]
+10-07 15:30:40.145: W/EagleEye(12204): Tick: 25
+10-07 15:30:40.855: W/EagleEye(12204): Location: 25
+10-07 15:30:40.875: W/EagleEye(12204): distanceInMeters: 43.491413 ticks: 25
+10-07 15:30:40.880: W/EagleEye(12204): Location[gps 56.169655,10.188551 acc=48 et=+4h32m59s817ms alt=69.48748847675989 vel=0.0 {Bundle[mParcelledData.dataSize=44]}]
+10-07 15:30:44.140: W/EagleEye(12204): Tick: 26
+10-07 15:30:44.885: W/EagleEye(12204): Location: 26
+10-07 15:30:44.940: W/EagleEye(12204): distanceInMeters: 36.88923 ticks: 26
+10-07 15:30:44.940: W/EagleEye(12204): Location[gps 56.169655,10.188551 acc=48 et=+4h32m59s817ms alt=69.48748847675989 vel=0.0 {Bundle[mParcelledData.dataSize=44]}]
+10-07 15:30:51.500: W/EagleEye(12204): Tick: 27
+10-07 15:30:51.845: W/EagleEye(12204): Location: 27
+10-07 15:30:51.895: W/EagleEye(12204): distanceInMeters: 36.88923 ticks: 27
+10-07 15:30:51.895: W/EagleEye(12204): Location[gps 56.169655,10.188551 acc=48 et=+4h32m59s817ms alt=69.48748847675989 vel=0.0 {Bundle[mParcelledData.dataSize=44]}]
+10-07 15:30:58.460: W/EagleEye(12204): Tick: 28
+10-07 15:30:58.930: W/EagleEye(12204): Location: 28
+10-07 15:30:58.950: W/EagleEye(12204): distanceInMeters: 36.88923 ticks: 28
+10-07 15:30:58.950: W/EagleEye(12204): Location[gps 56.169655,10.188551 acc=48 et=+4h32m59s817ms alt=69.48748847675989 vel=0.0 {Bundle[mParcelledData.dataSize=44]}]
+10-07 15:31:05.515: W/EagleEye(12204): Tick: 29
+10-07 15:31:05.895: W/EagleEye(12204): Location: 29
+10-07 15:31:05.965: W/EagleEye(12204): distanceInMeters: 36.88923 ticks: 29
+10-07 15:31:05.965: W/EagleEye(12204): Location[gps 56.169655,10.188551 acc=48 et=+4h32m59s817ms alt=69.48748847675989 vel=0.0 {Bundle[mParcelledData.dataSize=44]}]
+10-07 15:31:12.525: W/EagleEye(12204): Tick: 30
+10-07 15:31:12.970: W/EagleEye(12204): Location: 30
+10-07 15:31:13.000: W/EagleEye(12204): distanceInMeters: 36.88923 ticks: 30
+10-07 15:31:13.000: W/EagleEye(12204): Location[gps 56.169655,10.188551 acc=48 et=+4h32m59s817ms alt=69.48748847675989 vel=0.0 {Bundle[mParcelledData.dataSize=44]}]
+10-07 15:31:19.565: W/EagleEye(12204): Tick: 31
+10-07 15:31:19.875: W/EagleEye(12204): Location: 31
+10-07 15:31:19.925: W/EagleEye(12204): distanceInMeters: 41.541832 ticks: 31
+10-07 15:31:19.925: W/EagleEye(12204): Location[gps 56.169655,10.188551 acc=48 et=+4h32m59s817ms alt=69.48748847675989 vel=0.0 {Bundle[mParcelledData.dataSize=44]}]
+10-07 15:31:24.160: W/EagleEye(12204): Tick: 32
+10-07 15:31:24.845: W/EagleEye(12204): Location: 32
+10-07 15:31:24.890: W/EagleEye(12204): distanceInMeters: 42.798645 ticks: 32
+10-07 15:31:24.890: W/EagleEye(12204): Location[gps 56.169655,10.188551 acc=48 et=+4h32m59s817ms alt=69.48748847675989 vel=0.0 {Bundle[mParcelledData.dataSize=44]}]
+10-07 15:31:28.500: W/EagleEye(12204): Tick: 33
+10-07 15:31:28.910: W/EagleEye(12204): Location: 33
+10-07 15:31:28.970: W/EagleEye(12204): distanceInMeters: 41.0475 ticks: 33
+10-07 15:31:28.970: W/EagleEye(12204): Location[gps 56.169655,10.188551 acc=48 et=+4h32m59s817ms alt=69.48748847675989 vel=0.0 {Bundle[mParcelledData.dataSize=44]}]
+10-07 15:31:33.455: W/EagleEye(12204): Tick: 34
+10-07 15:31:33.955: W/EagleEye(12204): Location: 34
+10-07 15:31:34.000: W/EagleEye(12204): distanceInMeters: 39.454494 ticks: 34
+10-07 15:31:34.000: W/EagleEye(12204): Location[gps 56.169655,10.188551 acc=48 et=+4h32m59s817ms alt=69.48748847675989 vel=0.0 {Bundle[mParcelledData.dataSize=44]}]
+10-07 15:31:39.275: W/EagleEye(12204): Tick: 35
+10-07 15:31:39.875: W/EagleEye(12204): Location: 35
+10-07 15:31:39.955: W/EagleEye(12204): distanceInMeters: 42.382713 ticks: 35
+10-07 15:31:39.955: W/EagleEye(12204): Location[gps 56.169655,10.188551 acc=48 et=+4h32m59s817ms alt=69.48748847675989 vel=0.0 {Bundle[mParcelledData.dataSize=44]}]
+10-07 15:31:43.770: W/EagleEye(12204): Tick: 36
+10-07 15:31:43.975: W/EagleEye(12204): Location: 36
+10-07 15:31:44.020: W/EagleEye(12204): distanceInMeters: 48.75761 ticks: 36
+10-07 15:31:44.020: W/EagleEye(12204): Location[gps 56.169655,10.188551 acc=48 et=+4h32m59s817ms alt=69.48748847675989 vel=0.0 {Bundle[mParcelledData.dataSize=44]}]
+10-07 15:31:44.645: W/EagleEye(12204): Tick: 37
+10-07 15:31:45.870: W/EagleEye(12204): Location: 37
+10-07 15:31:45.915: W/EagleEye(12204): distanceInMeters: 51.242493 ticks: 37
+10-07 15:31:45.915: W/EagleEye(12204): Location[gps 56.169655,10.188551 acc=48 et=+4h32m59s817ms alt=69.48748847675989 vel=0.0 {Bundle[mParcelledData.dataSize=44]}]
+10-07 15:31:45.915: W/EagleEye(12204): Locations: 8
+10-07 15:31:45.970: W/EagleEye(12204): Sending data to server
+10-07 15:32:10.970: W/EagleEye(12204): Tick: 38
+10-07 15:32:18.325: W/EagleEye(12204): Location: 38
+10-07 15:32:18.340: W/EagleEye(12204): distanceInMeters: 52.52016 ticks: 38
+10-07 15:32:18.340: W/EagleEye(12204): Location[gps 56.169688,10.187728 acc=16 et=+4h34m45s220ms alt=102.82592972866105 vel=1.2791429 bear=302.11115 {Bundle[mParcelledData.dataSize=44]}]
+10-07 15:32:18.340: W/EagleEye(12204): Locations: 9
+10-07 15:32:18.370: W/EagleEye(12204): Sending data to server
+10-07 15:32:43.390: W/EagleEye(12204): Tick: 39
+10-07 15:32:49.790: W/EagleEye(12204): Location: 39
+10-07 15:32:49.845: W/EagleEye(12204): distanceInMeters: 48.24087 ticks: 39
+10-07 15:32:49.845: W/EagleEye(12204): Location[gps 56.170071,10.187233 acc=32 et=+4h35m17s652ms alt=100.06768323001631 vel=0.0 {Bundle[mParcelledData.dataSize=44]}]
+10-07 15:32:50.730: W/EagleEye(12204): Tick: 40
+10-07 15:32:51.700: W/EagleEye(12204): Location: 40
+10-07 15:32:51.730: W/EagleEye(12204): distanceInMeters: 48.24087 ticks: 40
+10-07 15:32:51.730: W/EagleEye(12204): Location[gps 56.170071,10.187233 acc=32 et=+4h35m17s652ms alt=100.06768323001631 vel=0.0 {Bundle[mParcelledData.dataSize=44]}]
+10-07 15:32:52.615: W/EagleEye(12204): Tick: 41
+10-07 15:32:52.900: W/EagleEye(12204): Location: 41
+10-07 15:32:52.945: W/EagleEye(12204): distanceInMeters: 48.24087 ticks: 41
+10-07 15:32:52.950: W/EagleEye(12204): Location[gps 56.170071,10.187233 acc=32 et=+4h35m17s652ms alt=100.06768323001631 vel=0.0 {Bundle[mParcelledData.dataSize=44]}]
+10-07 15:32:53.840: W/EagleEye(12204): Tick: 42
+10-07 15:32:54.870: W/EagleEye(12204): Location: 42
+10-07 15:32:54.885: W/EagleEye(12204): distanceInMeters: 48.24087 ticks: 42
+10-07 15:32:54.890: W/EagleEye(12204): Location[gps 56.170071,10.187233 acc=32 et=+4h35m17s652ms alt=100.06768323001631 vel=0.0 {Bundle[mParcelledData.dataSize=44]}]
+10-07 15:32:55.770: W/EagleEye(12204): Tick: 43
+10-07 15:32:56.870: W/EagleEye(12204): Location: 43
+10-07 15:32:56.890: W/EagleEye(12204): distanceInMeters: 48.24087 ticks: 43
+10-07 15:32:56.890: W/EagleEye(12204): Location[gps 56.170071,10.187233 acc=32 et=+4h35m17s652ms alt=100.06768323001631 vel=0.0 {Bundle[mParcelledData.dataSize=44]}]
+10-07 15:32:57.770: W/EagleEye(12204): Tick: 44
+10-07 15:32:58.955: W/EagleEye(12204): Location: 44
+10-07 15:32:59.005: W/EagleEye(12204): distanceInMeters: 48.24087 ticks: 44
+10-07 15:32:59.005: W/EagleEye(12204): Location[gps 56.170071,10.187233 acc=32 et=+4h35m17s652ms alt=100.06768323001631 vel=0.0 {Bundle[mParcelledData.dataSize=44]}]
+10-07 15:32:59.890: W/EagleEye(12204): Tick: 45
+10-07 15:33:00.860: W/EagleEye(12204): Location: 45
+10-07 15:33:00.875: W/EagleEye(12204): distanceInMeters: 48.24087 ticks: 45
+10-07 15:33:00.875: W/EagleEye(12204): Location[gps 56.170071,10.187233 acc=32 et=+4h35m17s652ms alt=100.06768323001631 vel=0.0 {Bundle[mParcelledData.dataSize=44]}]
+10-07 15:33:01.755: W/EagleEye(12204): Tick: 46
+10-07 15:33:02.870: W/EagleEye(12204): Location: 46
+10-07 15:33:02.885: W/EagleEye(12204): distanceInMeters: 48.24087 ticks: 46
+10-07 15:33:02.885: W/EagleEye(12204): Location[gps 56.170071,10.187233 acc=32 et=+4h35m17s652ms alt=100.06768323001631 vel=0.0 {Bundle[mParcelledData.dataSize=44]}]
+10-07 15:33:03.770: W/EagleEye(12204): Tick: 47
+10-07 15:33:04.845: W/EagleEye(12204): Location: 47
+10-07 15:33:04.890: W/EagleEye(12204): distanceInMeters: 48.24087 ticks: 47
+10-07 15:33:04.890: W/EagleEye(12204): Location[gps 56.170071,10.187233 acc=32 et=+4h35m17s652ms alt=100.06768323001631 vel=0.0 {Bundle[mParcelledData.dataSize=44]}]
+10-07 15:33:05.770: W/EagleEye(12204): Tick: 48
+10-07 15:33:06.860: W/EagleEye(12204): Location: 48
+10-07 15:33:06.920: W/EagleEye(12204): distanceInMeters: 59.671432 ticks: 48
+10-07 15:33:06.925: W/EagleEye(12204): Location[gps 56.170071,10.187233 acc=32 et=+4h35m17s652ms alt=100.06768323001631 vel=0.0 {Bundle[mParcelledData.dataSize=44]}]
+10-07 15:33:06.925: W/EagleEye(12204): Locations: 10
+10-07 15:33:06.955: W/EagleEye(12204): Sending data to server
+10-07 15:33:31.985: W/EagleEye(12204): Tick: 49
+10-07 15:33:41.275: W/EagleEye(12204): Location: 49
+10-07 15:33:41.345: W/EagleEye(12204): distanceInMeters: 92.6296 ticks: 49
+10-07 15:33:41.345: W/EagleEye(12204): Location[gps 56.170593,10.187448 acc=12 et=+4h36m6s190ms alt=130.49636348074247 vel=1.5550203 {Bundle[mParcelledData.dataSize=44]}]
+10-07 15:33:41.345: W/EagleEye(12204): Locations: 11
+10-07 15:33:41.380: W/EagleEye(12204): Sending data to server
+10-07 15:34:06.390: W/EagleEye(12204): Tick: 50
+10-07 15:34:14.710: W/EagleEye(12204): Location: 50
+10-07 15:34:14.720: W/EagleEye(12204): distanceInMeters: 104.50461 ticks: 50
+10-07 15:34:14.725: W/EagleEye(12204): Location[gps 56.169805,10.187924 acc=48 et=+4h36m40s625ms alt=95.12263918654843 vel=0.0 {Bundle[mParcelledData.dataSize=44]}]
+10-07 15:34:14.725: W/EagleEye(12204): Locations: 12
+10-07 15:34:14.770: W/EagleEye(12204): Sending data to server
+10-07 15:34:39.775: W/EagleEye(12204): Tick: 51
+10-07 15:34:47.055: W/EagleEye(12204): Location: 51
+10-07 15:34:47.095: W/EagleEye(12204): distanceInMeters: 61.134598 ticks: 51
+10-07 15:34:47.095: W/EagleEye(12204): Location[gps 56.170690,10.187363 acc=48 et=+4h37m14s39ms alt=80.43602427969047 vel=0.0 {Bundle[mParcelledData.dataSize=44]}]
+10-07 15:34:47.100: W/EagleEye(12204): Locations: 13
+10-07 15:34:47.130: W/EagleEye(12204): Sending data to server
+10-07 15:35:12.150: W/EagleEye(12204): Tick: 52
+10-07 15:35:20.485: W/EagleEye(12204): Location: 52
+10-07 15:35:20.500: W/EagleEye(12204): distanceInMeters: 28.303556 ticks: 52
+10-07 15:35:20.500: W/EagleEye(12204): Location[gps 56.171233,10.187508 acc=32 et=+4h37m46s408ms alt=136.4826903773713 vel=0.0 {Bundle[mParcelledData.dataSize=44]}]
+10-07 15:35:31.355: W/EagleEye(12204): Tick: 53
+10-07 15:35:34.810: W/EagleEye(12204): Location: 53
+10-07 15:35:34.865: W/EagleEye(12204): distanceInMeters: 65.103905 ticks: 53
+10-07 15:35:34.865: W/EagleEye(12204): Location[gps 56.171233,10.187508 acc=32 et=+4h37m46s408ms alt=136.4826903773713 vel=0.0 {Bundle[mParcelledData.dataSize=44]}]
+10-07 15:35:34.865: W/EagleEye(12204): Locations: 14
+10-07 15:35:34.880: W/EagleEye(12204): Sending data to server
+10-07 15:35:59.910: W/EagleEye(12204): Tick: 54
+10-07 15:36:10.210: W/EagleEye(12204): Location: 54
+10-07 15:36:10.245: W/EagleEye(12204): distanceInMeters: 38.646152 ticks: 54
+10-07 15:36:10.245: W/EagleEye(12204): Location[gps 56.171669,10.188206 acc=48 et=+4h38m34s168ms alt=119.30894837397544 vel=0.0 {Bundle[mParcelledData.dataSize=44]}]
+10-07 15:36:15.925: W/EagleEye(12204): Tick: 55
+10-07 15:36:16.880: W/EagleEye(12204): Location: 55
+10-07 15:36:16.895: W/EagleEye(12204): distanceInMeters: 38.646152 ticks: 55
+10-07 15:36:16.895: W/EagleEye(12204): Location[gps 56.171669,10.188206 acc=48 et=+4h38m34s168ms alt=119.30894837397544 vel=0.0 {Bundle[mParcelledData.dataSize=44]}]
+10-07 15:36:22.575: W/EagleEye(12204): Tick: 56
+10-07 15:36:22.935: W/EagleEye(12204): Location: 56
+10-07 15:36:22.975: W/EagleEye(12204): distanceInMeters: 39.830166 ticks: 56
+10-07 15:36:22.975: W/EagleEye(12204): Location[gps 56.171669,10.188206 acc=48 et=+4h38m34s168ms alt=119.30894837397544 vel=0.0 {Bundle[mParcelledData.dataSize=44]}]
+10-07 15:36:28.060: W/EagleEye(12204): Tick: 57
+10-07 15:36:28.855: W/EagleEye(12204): Location: 57
+10-07 15:36:28.865: W/EagleEye(12204): distanceInMeters: 61.241146 ticks: 57
+10-07 15:36:28.870: W/EagleEye(12204): Location[gps 56.171669,10.188206 acc=48 et=+4h38m34s168ms alt=119.30894837397544 vel=0.0 {Bundle[mParcelledData.dataSize=44]}]
+10-07 15:36:28.870: W/EagleEye(12204): Locations: 15
+10-07 15:36:28.945: W/EagleEye(12204): Sending data to server
+10-07 15:36:53.950: W/EagleEye(12204): Tick: 58
+10-07 15:37:02.260: W/EagleEye(12204): Location: 58
+10-07 15:37:02.300: W/EagleEye(12204): distanceInMeters: 54.640484 ticks: 58
+10-07 15:37:02.300: W/EagleEye(12204): Location[gps 56.171419,10.189084 acc=12 et=+4h39m28s187ms alt=112.43371316509813 vel=1.3943204 {Bundle[mParcelledData.dataSize=44]}]
+10-07 15:37:02.300: W/EagleEye(12204): Locations: 16
+10-07 15:37:02.340: W/EagleEye(12204): Sending data to server
+10-07 15:37:15.335: W/EagleEye(12204): Stop running
+10-07 15:37:15.335: W/EagleEye(12204): Ticks:58, locations:58, acceptedLocationCount: 16, ticks-locations:0, locations-acceptedLocations: 42

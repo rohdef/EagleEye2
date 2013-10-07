@@ -59,7 +59,6 @@ public abstract class Trigger implements LocationListener {
     float distance;
 
     if(lastLocation == null){
-      lastLocation = location;
       distance = 0;
     }else{
       distance = lastLocation.distanceTo(location);

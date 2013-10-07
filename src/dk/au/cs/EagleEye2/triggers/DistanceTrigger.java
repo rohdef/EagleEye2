@@ -51,6 +51,7 @@ public class DistanceTrigger extends Trigger implements LocationListener {
     locationsCount++;
 
     Log.w("EagleEye", "distanceInMeters: " + distanceInMeters + " ticks: " + locationsCount);
+    Log.w("EagleEye", "" + lastLocation);
 
     if(thresholdInMeters <= distanceInMeters || lastLocation == null){
       acceptedLocationCount++;
