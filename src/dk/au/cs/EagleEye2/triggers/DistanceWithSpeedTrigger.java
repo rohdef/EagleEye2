@@ -10,7 +10,7 @@ public class DistanceWithSpeedTrigger extends DistanceTrigger implements Runnabl
   private LocationManager locationManager;
   private long timeInMilliSeconds;
   private Thread thread;
-  private boolean running = false;
+  private boolean running = false, waitingForGPS = false;
   private int tickCount, maxSpeedInMetersPerSecond;
 
   public DistanceWithSpeedTrigger(int maxSpeedInMetersPerSecond, int thresholdInMeters, Context context) {
@@ -35,6 +35,9 @@ public class DistanceWithSpeedTrigger extends DistanceTrigger implements Runnabl
 
     while (running) {
       timerTick();
+      waitingForGPS = true;
+      while (waitingForGPS) {}
+
       try {
         Thread.sleep(timeInMilliSeconds);
       } catch (InterruptedException e) {
@@ -69,10 +72,12 @@ public class DistanceWithSpeedTrigger extends DistanceTrigger implements Runnabl
 
     if(super.locationUpdated(distanceInMeters, newLocation)) {
       timeInMilliSeconds = (long) ((getThresholdInMeters()/maxSpeedInMetersPerSecond)*1000);
+      waitingForGPS = false;
       return true;
     } else {
       float distanceRemaining = getThresholdInMeters()-distanceInMeters;
       timeInMilliSeconds = (long) ((distanceRemaining/maxSpeedInMetersPerSecond)*1000);
+      waitingForGPS = false;
       return false;
     }
   }
