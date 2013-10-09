@@ -28,63 +28,63 @@
 		</LineString>
 	</Placemark>
 	<Placemark>
-		<name>A</name>
+		<name>A - 00:00</name>
 		<styleUrl>EagleEye</styleUrl>
 		<Point>
 			<coordinates>10.19015384484391,56.17131346642588,0</coordinates>
 		</Point>
 	</Placemark>
 	<Placemark>
-		<name>B</name>
+		<name>B - 01:19</name>
 		<styleUrl>EagleEye</styleUrl>
 		<Point>
 			<coordinates>10.18982202554674,56.17039754837804,0</coordinates>
 		</Point>
 	</Placemark>
 	<Placemark>
-		<name>C</name>
+		<name>C - 03:12</name>
 		<styleUrl>EagleEye</styleUrl>
 		<Point>
 			<coordinates>10.1889623467624,56.16897538503765,0</coordinates>
 		</Point>
 	</Placemark>
 	<Placemark>
-		<name>D</name>
+		<name>D - 04:12 - 05:12</name>
 		<styleUrl>EagleEye</styleUrl>
 		<Point>
 			<coordinates>10.18795463866745,56.16953057744322,0</coordinates>
 		</Point>
 	</Placemark>
 	<Placemark>
-		<name>E</name>
+		<name>E - 06:13</name>
 		<styleUrl>EagleEye</styleUrl>
 		<Point>
 			<coordinates>10.18711117385216,56.17004823949638,0</coordinates>
 		</Point>
 	</Placemark>
 	<Placemark>
-		<name>F</name>
+		<name>F - 07:08 - 08:08</name>
 		<styleUrl>EagleEye</styleUrl>
 		<Point>
 			<coordinates>10.18742285762772,56.17072844489615,0</coordinates>
 		</Point>
 	</Placemark>
 	<Placemark>
-		<name>G</name>
+		<name>G - 09:20</name>
 		<styleUrl>EagleEye</styleUrl>
 		<Point>
 			<coordinates>10.1879330496174,56.17163968501391,0</coordinates>
 		</Point>
 	</Placemark>
 	<Placemark>
-		<name>H</name>
+		<name>H - 10:04</name>
 		<styleUrl>EagleEye</styleUrl>
 		<Point>
 			<coordinates>10.18898539532717,56.17152656664069,0</coordinates>
 		</Point>
 	</Placemark>
 	<Placemark>
-		<name>I</name>
+		<name>I - 11:04</name>
 		<styleUrl>EagleEye</styleUrl>
 		<Point>
 			<coordinates>10.19015384484391,56.17131346642588,0</coordinates>

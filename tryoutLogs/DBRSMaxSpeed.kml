@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:xal="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0">
+    <Document>
+        <name>Locations</name>
+        <Style id="EagleEye">
+            <IconStyle>
+                <scale>1.0</scale>
+                <heading>0.0</heading>
+                <Icon>
+                    <href>http://www.google.com/mapfiles/ms/micons/blue.png</href>
+                    <refreshInterval>0.0</refreshInterval>
+                    <viewRefreshTime>0.0</viewRefreshTime>
+                    <viewBoundScale>0.0</viewBoundScale>
+                </Icon>
+            </IconStyle>
+            <LineStyle>
+                <color>55ff0000</color>
+                <width>3.0</width>
+            </LineStyle>
+        </Style>
+        <Placemark>
+            <name>Path</name>
+            <styleUrl>EagleEye</styleUrl>
+            <LineString>
+                <coordinates>10.190408376552423,56.171437549795286 10.190265811431578,56.17098928179426 10.18992390066921,56.17049517681364 10.190128810558221,56.17000869654869 10.189514276061503,56.169645086908545 10.18925164422616,56.169154070266075 10.188550943047591,56.16965549158964 10.187728150651726,56.16968842001845 10.187233359972923,56.170070900810394 10.18744827178679,56.17059323192802 10.18792445476887,56.16980487304605 10.187363434977154,56.170689715384505 10.187508089693237,56.171232808357956 10.188205575964691,56.17166924185583 10.189083519776371,56.17141898164163 10.189960870809227,56.17145442329584</coordinates>
+            </LineString>
+        </Placemark>
+        <Placemark>
+            <name>L0 - 00:00</name>
+            <description>Time: 07-10-2013 15:26:13</description>
+            <styleUrl>EagleEye</styleUrl>
+            <Point>
+                <coordinates>10.190408376552423,56.171437549795286</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>L1 - 00:31</name>
+            <description>Time: 07-10-2013 15:26:44</description>
+            <styleUrl>EagleEye</styleUrl>
+            <Point>
+                <coordinates>10.190265811431578,56.17098928179426</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>L2 - 01:03</name>
+            <description>Time: 07-10-2013 15:27:17</description>
+            <styleUrl>EagleEye</styleUrl>
+            <Point>
+                <coordinates>10.18992390066921,56.17049517681364</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>L3 - 01:34</name>
+            <description>Time: 07-10-2013 15:27:47</description>
+            <styleUrl>EagleEye</styleUrl>
+            <Point>
+                <coordinates>10.190128810558221,56.17000869654869</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>L4 - 02:13</name>
+            <description>Time: 07-10-2013 15:28:27</description>
+            <styleUrl>EagleEye</styleUrl>
+            <Point>
+                <coordinates>10.189514276061503,56.169645086908545</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>L5 - 02:55</name>
+            <description>Time: 07-10-2013 15:29:08</description>
+            <styleUrl>EagleEye</styleUrl>
+            <Point>
+                <coordinates>10.18925164422616,56.169154070266075</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>L6 - 03:49</name>
+            <description>Time: 07-10-2013 15:30:02</description>
+            <styleUrl>EagleEye</styleUrl>
+            <Point>
+                <coordinates>10.188550943047591,56.16965549158964</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>L7 - 05:34</name>
+            <description>Time: 07-10-2013 15:31:48</description>
+            <styleUrl>EagleEye</styleUrl>
+            <Point>
+                <coordinates>10.187728150651726,56.16968842001845</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>L8 - 06:06</name>
+            <description>Time: 07-10-2013 15:32:20</description>
+            <styleUrl>EagleEye</styleUrl>
+            <Point>
+                <coordinates>10.187233359972923,56.170070900810394</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>L9 - 06:55</name>
+            <description>Time: 07-10-2013 15:33:09</description>
+            <styleUrl>EagleEye</styleUrl>
+            <Point>
+                <coordinates>10.18744827178679,56.17059323192802</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>L10 - 07:29</name>
+            <description>Time: 07-10-2013 15:33:43</description>
+            <styleUrl>EagleEye</styleUrl>
+            <Point>
+                <coordinates>10.18792445476887,56.16980487304605</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>L11 - 08:03</name>
+            <description>Time: 07-10-2013 15:34:16</description>
+            <styleUrl>EagleEye</styleUrl>
+            <Point>
+                <coordinates>10.187363434977154,56.170689715384505</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>L12 - 08:35</name>
+            <description>Time: 07-10-2013 15:34:49</description>
+            <styleUrl>EagleEye</styleUrl>
+            <Point>
+                <coordinates>10.187508089693237,56.171232808357956</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>L13 - 09:23</name>
+            <description>Time: 07-10-2013 15:35:37</description>
+            <styleUrl>EagleEye</styleUrl>
+            <Point>
+                <coordinates>10.188205575964691,56.17166924185583</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>L14 - 10:17</name>
+            <description>Time: 07-10-2013 15:36:30</description>
+            <styleUrl>EagleEye</styleUrl>
+            <Point>
+                <coordinates>10.189083519776371,56.17141898164163</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>L15 - 10:50</name>
+            <description>Time: 07-10-2013 15:37:04</description>
+            <styleUrl>EagleEye</styleUrl>
+            <Point>
+                <coordinates>10.189960870809227,56.17145442329584</coordinates>
+            </Point>
+        </Placemark>
+    </Document>
+</kml>
